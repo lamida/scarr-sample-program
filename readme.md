@@ -1,29 +1,13 @@
 # ScaRR Sample Program
 
-In this folder we are generating different analyser viewer provided by LLVM. See gen-dot.sh to see how the graph is generated. 
+This repository contains sample program that is used to test [ScaRR LLVM passes](https://github.com/lamida/llvm-project/pull/3/). 
 
-In LLVM legacy opt, we are using the following arguments to trigger some visualization of the program.
+In the `small/c` subdirectory there are several c source code. There are also some script to regenerate the result. 
+In that folder, there are some subfolder with the same name as the c source code.
 
-* --dot-callgraph         - Print call graph to 'dot' file
-* --dot-cfg               - Print CFG of function to 'dot' file
-* --dot-cfg-only          - Print CFG of function to 'dot' file (with no function bodies)
-* --dot-dom               - Print dominance tree of function to 'dot' file
-* --dot-dom-only          - Print dominance tree of function to 'dot' file (with no function bodies)
-* --dot-postdom           - Print postdominance tree of function to 'dot' file
-* --dot-postdom-only      - Print postdominance tree of function to 'dot' file (with no function bodies)
-* --dot-regions           - Print regions of function to 'dot' file
-* --dot-regions-only      - Print regions of function to 'dot' file (with no function bodies)
+In the subfolder there will be two more folders:
+* dot-scarr
+* dot-scarr-inline
 
-Need graphviz. Install using:
-```
-sudo apt-get install graphviz
-```
-
-## Generating dot* Output
-
-To generate dot graph output, use `./gen.sh` script. The script accept the c source filename (without .c extension). After 
-the script run, it will create a folder with the name and subfolders with all the analyser above executed.
-
-## ScaRR
-
-We are creating a simple LLVM pass that will put the information about checkpoint and LoA in the CFG. 
+In those two folderswe can see the modified dot-cfg output with checkpoint information. There is also loa.txt which contains
+the statistic of the checkpoints and LoA.
