@@ -11,3 +11,6 @@ In the subfolder there will be two more folders:
 
 In those two folderswe can see the modified dot-cfg output with checkpoint information. There is also loa.txt which contains
 the statistic of the checkpoints and LoA.
+
+# Note
+There are some gibberish at the end of loa.txt. I am still not sure what is causing that. Maybe because of the piping in the script I use to generate that.
