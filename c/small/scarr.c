@@ -5,14 +5,17 @@
 // https://arxiv.org/abs/1807.08003
 
 char* get_input() { int rnd = rand() % 2;
+    printf("get_input");
     return rnd == 1 ? "auth" : "error";
 }
 
 char* get_privileged_info() {
+    printf("get_privileged_info");
     return "you are privileged!";
 }
 
 char* get_unprivileged_info() {
+    printf("get_unprivileged_info");
     return "Invalid!";
 }
 

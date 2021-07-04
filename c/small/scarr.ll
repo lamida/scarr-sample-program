@@ -3,13 +3,16 @@ source_filename = "scarr.c"
 target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu"
 
-@.str = private unnamed_addr constant [5 x i8] c"auth\00", align 1
-@.str.1 = private unnamed_addr constant [6 x i8] c"error\00", align 1
-@.str.2 = private unnamed_addr constant [20 x i8] c"you are privileged!\00", align 1
-@.str.3 = private unnamed_addr constant [9 x i8] c"Invalid!\00", align 1
-@.str.4 = private unnamed_addr constant [3 x i8] c"%s\00", align 1
-@.str.5 = private unnamed_addr constant [11 x i8] c"Exiting...\00", align 1
-@.str.6 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1
+@.str = private unnamed_addr constant [10 x i8] c"get_input\00", align 1
+@.str.1 = private unnamed_addr constant [5 x i8] c"auth\00", align 1
+@.str.2 = private unnamed_addr constant [6 x i8] c"error\00", align 1
+@.str.3 = private unnamed_addr constant [20 x i8] c"get_privileged_info\00", align 1
+@.str.4 = private unnamed_addr constant [20 x i8] c"you are privileged!\00", align 1
+@.str.5 = private unnamed_addr constant [22 x i8] c"get_unprivileged_info\00", align 1
+@.str.6 = private unnamed_addr constant [9 x i8] c"Invalid!\00", align 1
+@.str.7 = private unnamed_addr constant [3 x i8] c"%s\00", align 1
+@.str.8 = private unnamed_addr constant [11 x i8] c"Exiting...\00", align 1
+@.str.9 = private unnamed_addr constant [1 x i8] zeroinitializer, align 1
 
 ; Function Attrs: noinline nounwind optnone uwtable
 define dso_local i8* @get_input() #0 {
@@ -17,23 +20,28 @@ define dso_local i8* @get_input() #0 {
   %2 = call i32 (...) @rand()
   %3 = srem i32 %2, 2
   store i32 %3, i32* %1, align 4
-  %4 = load i32, i32* %1, align 4
-  %5 = icmp eq i32 %4, 1
-  %6 = zext i1 %5 to i64
-  %7 = select i1 %5, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str, i64 0, i64 0), i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.1, i64 0, i64 0)
-  ret i8* %7
+  %4 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str, i64 0, i64 0))
+  %5 = load i32, i32* %1, align 4
+  %6 = icmp eq i32 %5, 1
+  %7 = zext i1 %6 to i64
+  %8 = select i1 %6, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.2, i64 0, i64 0)
+  ret i8* %8
 }
 
 declare dso_local i32 @rand(...) #1
 
+declare dso_local i32 @printf(i8*, ...) #1
+
 ; Function Attrs: noinline nounwind optnone uwtable
 define dso_local i8* @get_privileged_info() #0 {
-  ret i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.2, i64 0, i64 0)
+  %1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.3, i64 0, i64 0))
+  ret i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.4, i64 0, i64 0)
 }
 
 ; Function Attrs: noinline nounwind optnone uwtable
 define dso_local i8* @get_unprivileged_info() #0 {
-  ret i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.3, i64 0, i64 0)
+  %1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.5, i64 0, i64 0))
+  ret i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.6, i64 0, i64 0)
 }
 
 ; Function Attrs: noinline nounwind optnone uwtable
@@ -41,15 +49,13 @@ define dso_local void @print_output(i8* %0) #0 {
   %2 = alloca i8*, align 8
   store i8* %0, i8** %2, align 8
   %3 = load i8*, i8** %2, align 8
-  %4 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.4, i64 0, i64 0), i8* %3)
+  %4 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.7, i64 0, i64 0), i8* %3)
   ret void
 }
 
-declare dso_local i32 @printf(i8*, ...) #1
-
 ; Function Attrs: noinline nounwind optnone uwtable
 define dso_local void @my_terminate() #0 {
-  %1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.5, i64 0, i64 0))
+  %1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.8, i64 0, i64 0))
   ret void
 }
 
@@ -61,9 +67,9 @@ define dso_local i32 @main() #0 {
   store i32 0, i32* %1, align 4
   %4 = call i8* @get_input()
   store i8* %4, i8** %2, align 8
-  store i8* getelementptr inbounds ([1 x i8], [1 x i8]* @.str.6, i64 0, i64 0), i8** %3, align 8
+  store i8* getelementptr inbounds ([1 x i8], [1 x i8]* @.str.9, i64 0, i64 0), i8** %3, align 8
   %5 = load i8*, i8** %2, align 8
-  %6 = call i32 @strcmp(i8* %5, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str, i64 0, i64 0))
+  %6 = call i32 @strcmp(i8* %5, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0))
   %7 = icmp eq i32 %6, 0
   br i1 %7, label %8, label %10
 
