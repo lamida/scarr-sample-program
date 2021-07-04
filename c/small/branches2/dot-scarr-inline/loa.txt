@@ -1,0 +1,1053 @@
+=============================================================
+ScaRR Offline Measurement Statistics
+=============================================================
+Offline Measurement Size: 33
+Number of Checkpoints: 22
+Number of List of Actions: 34
+=============================================================
+Checkpoints and LoA Details: 
+=============================================================
+Checkpoint 0
+LoA Size: 2
+
+Checkpoint_0_A: 
+  %1 = alloca i32, align 4
+  %2 = alloca i32, align 4
+  %3 = alloca i32, align 4
+  %4 = alloca i32, align 4
+  %5 = alloca i32, align 4
+  %6 = alloca i32, align 4
+  %7 = alloca i64, align 8
+  %8 = alloca i32, align 4
+  store i32 0, i32* %2, align 4
+  store i32 1, i32* %3, align 4
+  store i32 2, i32* %4, align 4
+  %9 = load i32, i32* %3, align 4
+  %10 = icmp eq i32 %9, 1
+  br i1 %10, label %11, label %28
+
+Checkpoint_0_B: 
+11:                                               ; preds = %0
+  %12 = bitcast i32* %1 to i8*
+  call void @llvm.lifetime.start.p0i8(i64 4, i8* %12)
+  store i32 10, i32* %1, align 4
+  %13 = load i32, i32* %1, align 4
+  %14 = icmp eq i32 %13, 10
+  br i1 %14, label %15, label %17
+LoA Details: 
+
+LOA_0: 
+  %1 = alloca i32, align 4
+  %2 = alloca i32, align 4
+  %3 = alloca i32, align 4
+  %4 = alloca i32, align 4
+  %5 = alloca i32, align 4
+  %6 = alloca i32, align 4
+  %7 = alloca i64, align 8
+  %8 = alloca i32, align 4
+  store i32 0, i32* %2, align 4
+  store i32 1, i32* %3, align 4
+  store i32 2, i32* %4, align 4
+  %9 = load i32, i32* %3, align 4
+  %10 = icmp eq i32 %9, 1
+  br i1 %10, label %11, label %28
+
+LOA_1: 
+11:                                               ; preds = %0
+  %12 = bitcast i32* %1 to i8*
+  call void @llvm.lifetime.start.p0i8(i64 4, i8* %12)
+  store i32 10, i32* %1, align 4
+  %13 = load i32, i32* %1, align 4
+  %14 = icmp eq i32 %13, 10
+  br i1 %14, label %15, label %17
+=============================================================
+=============================================================
+Checkpoint 1
+LoA Size: 2
+
+
+Checkpoint_1_A: 
+  %1 = alloca i32, align 4
+  %2 = alloca i32, align 4
+  %3 = alloca i32, align 4
+  %4 = alloca i32, align 4
+  %5 = alloca i32, align 4
+  %6 = alloca i32, align 4
+  %7 = alloca i64, align 8
+  %8 = alloca i32, align 4
+  store i32 0, i32* %2, align 4
+  store i32 1, i32* %3, align 4
+  store i32 2, i32* %4, align 4
+  %9 = load i32, i32* %3, align 4
+  %10 = icmp eq i32 %9, 1
+  br i1 %10, label %11, label %28
+
+Checkpoint_1_B: 
+28:                                               ; preds = %0
+  %29 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.2, i64 0, i64 0))
+  br label %30
+LoA Details: 
+
+LOA_0: 
+  %1 = alloca i32, align 4
+  %2 = alloca i32, align 4
+  %3 = alloca i32, align 4
+  %4 = alloca i32, align 4
+  %5 = alloca i32, align 4
+  %6 = alloca i32, align 4
+  %7 = alloca i64, align 8
+  %8 = alloca i32, align 4
+  store i32 0, i32* %2, align 4
+  store i32 1, i32* %3, align 4
+  store i32 2, i32* %4, align 4
+  %9 = load i32, i32* %3, align 4
+  %10 = icmp eq i32 %9, 1
+  br i1 %10, label %11, label %28
+
+LOA_1: 
+28:                                               ; preds = %0
+  %29 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.2, i64 0, i64 0))
+  br label %30
+=============================================================
+=============================================================
+Checkpoint 2
+LoA Size: 2
+
+
+Checkpoint_2_A: 
+11:                                               ; preds = %0
+  %12 = bitcast i32* %1 to i8*
+  call void @llvm.lifetime.start.p0i8(i64 4, i8* %12)
+  store i32 10, i32* %1, align 4
+  %13 = load i32, i32* %1, align 4
+  %14 = icmp eq i32 %13, 10
+  br i1 %14, label %15, label %17
+
+Checkpoint_2_B: 
+17:                                               ; preds = %11
+  %18 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([31 x i8], [31 x i8]* @.str.1, i64 0, i64 0))
+  br label %b1.exit
+LoA Details: 
+
+LOA_0: 
+11:                                               ; preds = %0
+  %12 = bitcast i32* %1 to i8*
+  call void @llvm.lifetime.start.p0i8(i64 4, i8* %12)
+  store i32 10, i32* %1, align 4
+  %13 = load i32, i32* %1, align 4
+  %14 = icmp eq i32 %13, 10
+  br i1 %14, label %15, label %17
+
+LOA_1: 
+17:                                               ; preds = %11
+  %18 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([31 x i8], [31 x i8]* @.str.1, i64 0, i64 0))
+  br label %b1.exit
+=============================================================
+=============================================================
+Checkpoint 3
+LoA Size: 2
+
+
+Checkpoint_3_A: 
+11:                                               ; preds = %0
+  %12 = bitcast i32* %1 to i8*
+  call void @llvm.lifetime.start.p0i8(i64 4, i8* %12)
+  store i32 10, i32* %1, align 4
+  %13 = load i32, i32* %1, align 4
+  %14 = icmp eq i32 %13, 10
+  br i1 %14, label %15, label %17
+
+Checkpoint_3_B: 
+15:                                               ; preds = %11
+  %16 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str, i64 0, i64 0))
+  br label %b1.exit
+LoA Details: 
+
+LOA_0: 
+11:                                               ; preds = %0
+  %12 = bitcast i32* %1 to i8*
+  call void @llvm.lifetime.start.p0i8(i64 4, i8* %12)
+  store i32 10, i32* %1, align 4
+  %13 = load i32, i32* %1, align 4
+  %14 = icmp eq i32 %13, 10
+  br i1 %14, label %15, label %17
+
+LOA_1: 
+15:                                               ; preds = %11
+  %16 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str, i64 0, i64 0))
+  br label %b1.exit
+=============================================================
+=============================================================
+Checkpoint 4
+LoA Size: 0
+
+
+Checkpoint_4_A: 
+28:                                               ; preds = %0
+  %29 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.2, i64 0, i64 0))
+  br label %30
+
+Checkpoint_4_B: 
+31:                                               ; preds = %34, %30
+  %32 = load i32, i32* %5, align 4
+  %33 = icmp sgt i32 %32, 0
+  br i1 %33, label %34, label %38
+=============================================================
+=============================================================
+Checkpoint 5
+LoA Size: 0
+
+
+Checkpoint_5_A: 
+22:                                               ; preds = %b1.exit
+  %23 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.3, i64 0, i64 0))
+  br label %27
+
+Checkpoint_5_B: 
+31:                                               ; preds = %34, %30
+  %32 = load i32, i32* %5, align 4
+  %33 = icmp sgt i32 %32, 0
+  br i1 %33, label %34, label %38
+=============================================================
+=============================================================
+Checkpoint 6
+LoA Size: 0
+
+
+Checkpoint_6_A: 
+24:                                               ; preds = %b1.exit
+  %25 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.5, i64 0, i64 0))
+  %26 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.4, i64 0, i64 0))
+  br label %27
+
+Checkpoint_6_B: 
+31:                                               ; preds = %34, %30
+  %32 = load i32, i32* %5, align 4
+  %33 = icmp sgt i32 %32, 0
+  br i1 %33, label %34, label %38
+=============================================================
+=============================================================
+Checkpoint 7
+LoA Size: 2
+
+
+Checkpoint_7_A: 
+31:                                               ; preds = %34, %30
+  %32 = load i32, i32* %5, align 4
+  %33 = icmp sgt i32 %32, 0
+  br i1 %33, label %34, label %38
+
+Checkpoint_7_B: 
+34:                                               ; preds = %31
+  %35 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.6, i64 0, i64 0))
+  %36 = load i32, i32* %5, align 4
+  %37 = add nsw i32 %36, -1
+  store i32 %37, i32* %5, align 4
+  br label %31
+LoA Details: 
+
+LOA_0: 
+31:                                               ; preds = %34, %30
+  %32 = load i32, i32* %5, align 4
+  %33 = icmp sgt i32 %32, 0
+  br i1 %33, label %34, label %38
+
+LOA_1: 
+34:                                               ; preds = %31
+  %35 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.6, i64 0, i64 0))
+  %36 = load i32, i32* %5, align 4
+  %37 = add nsw i32 %36, -1
+  store i32 %37, i32* %5, align 4
+  br label %31
+=============================================================
+=============================================================
+Checkpoint 8
+LoA Size: 2
+
+
+Checkpoint_8_A: 
+31:                                               ; preds = %34, %30
+  %32 = load i32, i32* %5, align 4
+  %33 = icmp sgt i32 %32, 0
+  br i1 %33, label %34, label %38
+
+Checkpoint_8_B: 
+48:                                               ; preds = %38
+  %49 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.11, i64 0, i64 0))
+  br label %50
+LoA Details: 
+
+LOA_0: 
+31:                                               ; preds = %34, %30
+  %32 = load i32, i32* %5, align 4
+  %33 = icmp sgt i32 %32, 0
+  br i1 %33, label %34, label %38
+
+LOA_1: 
+38:                                               ; preds = %31
+  store i32 4, i32* %6, align 4
+  %39 = load i32, i32* %6, align 4
+  switch i32 %39, label %48 [
+    i32 1, label %40
+    i32 2, label %42
+    i32 3, label %44
+    i32 4, label %46
+  ]
+=============================================================
+=============================================================
+Checkpoint 9
+LoA Size: 2
+
+
+Checkpoint_9_A: 
+31:                                               ; preds = %34, %30
+  %32 = load i32, i32* %5, align 4
+  %33 = icmp sgt i32 %32, 0
+  br i1 %33, label %34, label %38
+
+Checkpoint_9_B: 
+40:                                               ; preds = %38
+  %41 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.7, i64 0, i64 0))
+  br label %50
+LoA Details: 
+
+LOA_0: 
+31:                                               ; preds = %34, %30
+  %32 = load i32, i32* %5, align 4
+  %33 = icmp sgt i32 %32, 0
+  br i1 %33, label %34, label %38
+
+LOA_1: 
+38:                                               ; preds = %31
+  store i32 4, i32* %6, align 4
+  %39 = load i32, i32* %6, align 4
+  switch i32 %39, label %48 [
+    i32 1, label %40
+    i32 2, label %42
+    i32 3, label %44
+    i32 4, label %46
+  ]
+=============================================================
+=============================================================
+Checkpoint 10
+LoA Size: 2
+
+
+Checkpoint_10_A: 
+31:                                               ; preds = %34, %30
+  %32 = load i32, i32* %5, align 4
+  %33 = icmp sgt i32 %32, 0
+  br i1 %33, label %34, label %38
+
+Checkpoint_10_B: 
+42:                                               ; preds = %38
+  %43 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.8, i64 0, i64 0))
+  br label %50
+LoA Details: 
+
+LOA_0: 
+31:                                               ; preds = %34, %30
+  %32 = load i32, i32* %5, align 4
+  %33 = icmp sgt i32 %32, 0
+  br i1 %33, label %34, label %38
+
+LOA_1: 
+38:                                               ; preds = %31
+  store i32 4, i32* %6, align 4
+  %39 = load i32, i32* %6, align 4
+  switch i32 %39, label %48 [
+    i32 1, label %40
+    i32 2, label %42
+    i32 3, label %44
+    i32 4, label %46
+  ]
+=============================================================
+=============================================================
+Checkpoint 11
+LoA Size: 2
+
+
+Checkpoint_11_A: 
+31:                                               ; preds = %34, %30
+  %32 = load i32, i32* %5, align 4
+  %33 = icmp sgt i32 %32, 0
+  br i1 %33, label %34, label %38
+
+Checkpoint_11_B: 
+44:                                               ; preds = %38
+  %45 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.9, i64 0, i64 0))
+  br label %50
+LoA Details: 
+
+LOA_0: 
+31:                                               ; preds = %34, %30
+  %32 = load i32, i32* %5, align 4
+  %33 = icmp sgt i32 %32, 0
+  br i1 %33, label %34, label %38
+
+LOA_1: 
+38:                                               ; preds = %31
+  store i32 4, i32* %6, align 4
+  %39 = load i32, i32* %6, align 4
+  switch i32 %39, label %48 [
+    i32 1, label %40
+    i32 2, label %42
+    i32 3, label %44
+    i32 4, label %46
+  ]
+=============================================================
+=============================================================
+Checkpoint 12
+LoA Size: 2
+
+
+Checkpoint_12_A: 
+31:                                               ; preds = %34, %30
+  %32 = load i32, i32* %5, align 4
+  %33 = icmp sgt i32 %32, 0
+  br i1 %33, label %34, label %38
+
+Checkpoint_12_B: 
+46:                                               ; preds = %38
+  %47 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.10, i64 0, i64 0))
+  br label %50
+LoA Details: 
+
+LOA_0: 
+31:                                               ; preds = %34, %30
+  %32 = load i32, i32* %5, align 4
+  %33 = icmp sgt i32 %32, 0
+  br i1 %33, label %34, label %38
+
+LOA_1: 
+38:                                               ; preds = %31
+  store i32 4, i32* %6, align 4
+  %39 = load i32, i32* %6, align 4
+  switch i32 %39, label %48 [
+    i32 1, label %40
+    i32 2, label %42
+    i32 3, label %44
+    i32 4, label %46
+  ]
+=============================================================
+=============================================================
+Checkpoint 13
+LoA Size: 0
+
+
+Checkpoint_13_A: 
+34:                                               ; preds = %31
+  %35 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.6, i64 0, i64 0))
+  %36 = load i32, i32* %5, align 4
+  %37 = add nsw i32 %36, -1
+  store i32 %37, i32* %5, align 4
+  br label %31
+
+Checkpoint_13_B: 
+31:                                               ; preds = %34, %30
+  %32 = load i32, i32* %5, align 4
+  %33 = icmp sgt i32 %32, 0
+  br i1 %33, label %34, label %38
+=============================================================
+=============================================================
+Checkpoint 14
+LoA Size: 0
+
+
+Checkpoint_14_A: 
+48:                                               ; preds = %38
+  %49 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.11, i64 0, i64 0))
+  br label %50
+
+Checkpoint_14_B: 
+50:                                               ; preds = %48, %46, %44, %42, %40
+  %51 = call i64 @time(i64* %7)
+  %52 = trunc i64 %51 to i32
+  call void @srand(i32 %52)
+  %53 = call i32 @rand()
+  %54 = srem i32 %53, 4
+  %55 = add nsw i32 1, %54
+  store i32 %55, i32* %8, align 4
+  %56 = load i32, i32* %8, align 4
+  switch i32 %56, label %65 [
+    i32 1, label %57
+    i32 2, label %59
+    i32 3, label %61
+    i32 4, label %63
+  ]
+=============================================================
+=============================================================
+Checkpoint 15
+LoA Size: 0
+
+
+Checkpoint_15_A: 
+40:                                               ; preds = %38
+  %41 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.7, i64 0, i64 0))
+  br label %50
+
+Checkpoint_15_B: 
+50:                                               ; preds = %48, %46, %44, %42, %40
+  %51 = call i64 @time(i64* %7)
+  %52 = trunc i64 %51 to i32
+  call void @srand(i32 %52)
+  %53 = call i32 @rand()
+  %54 = srem i32 %53, 4
+  %55 = add nsw i32 1, %54
+  store i32 %55, i32* %8, align 4
+  %56 = load i32, i32* %8, align 4
+  switch i32 %56, label %65 [
+    i32 1, label %57
+    i32 2, label %59
+    i32 3, label %61
+    i32 4, label %63
+  ]
+=============================================================
+=============================================================
+Checkpoint 16
+LoA Size: 0
+
+
+Checkpoint_16_A: 
+42:                                               ; preds = %38
+  %43 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.8, i64 0, i64 0))
+  br label %50
+
+Checkpoint_16_B: 
+50:                                               ; preds = %48, %46, %44, %42, %40
+  %51 = call i64 @time(i64* %7)
+  %52 = trunc i64 %51 to i32
+  call void @srand(i32 %52)
+  %53 = call i32 @rand()
+  %54 = srem i32 %53, 4
+  %55 = add nsw i32 1, %54
+  store i32 %55, i32* %8, align 4
+  %56 = load i32, i32* %8, align 4
+  switch i32 %56, label %65 [
+    i32 1, label %57
+    i32 2, label %59
+    i32 3, label %61
+    i32 4, label %63
+  ]
+=============================================================
+=============================================================
+Checkpoint 17
+LoA Size: 0
+
+
+Checkpoint_17_A: 
+44:                                               ; preds = %38
+  %45 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.9, i64 0, i64 0))
+  br label %50
+
+Checkpoint_17_B: 
+50:                                               ; preds = %48, %46, %44, %42, %40
+  %51 = call i64 @time(i64* %7)
+  %52 = trunc i64 %51 to i32
+  call void @srand(i32 %52)
+  %53 = call i32 @rand()
+  %54 = srem i32 %53, 4
+  %55 = add nsw i32 1, %54
+  store i32 %55, i32* %8, align 4
+  %56 = load i32, i32* %8, align 4
+  switch i32 %56, label %65 [
+    i32 1, label %57
+    i32 2, label %59
+    i32 3, label %61
+    i32 4, label %63
+  ]
+=============================================================
+=============================================================
+Checkpoint 18
+LoA Size: 0
+
+
+Checkpoint_18_A: 
+46:                                               ; preds = %38
+  %47 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.10, i64 0, i64 0))
+  br label %50
+
+Checkpoint_18_B: 
+50:                                               ; preds = %48, %46, %44, %42, %40
+  %51 = call i64 @time(i64* %7)
+  %52 = trunc i64 %51 to i32
+  call void @srand(i32 %52)
+  %53 = call i32 @rand()
+  %54 = srem i32 %53, 4
+  %55 = add nsw i32 1, %54
+  store i32 %55, i32* %8, align 4
+  %56 = load i32, i32* %8, align 4
+  switch i32 %56, label %65 [
+    i32 1, label %57
+    i32 2, label %59
+    i32 3, label %61
+    i32 4, label %63
+  ]
+=============================================================
+=============================================================
+Checkpoint 19
+LoA Size: 2
+
+
+Checkpoint_19_A: 
+50:                                               ; preds = %48, %46, %44, %42, %40
+  %51 = call i64 @time(i64* %7)
+  %52 = trunc i64 %51 to i32
+  call void @srand(i32 %52)
+  %53 = call i32 @rand()
+  %54 = srem i32 %53, 4
+  %55 = add nsw i32 1, %54
+  store i32 %55, i32* %8, align 4
+  %56 = load i32, i32* %8, align 4
+  switch i32 %56, label %65 [
+    i32 1, label %57
+    i32 2, label %59
+    i32 3, label %61
+    i32 4, label %63
+  ]
+
+Checkpoint_19_B: 
+65:                                               ; preds = %50
+  %66 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.11, i64 0, i64 0))
+  br label %67
+LoA Details: 
+
+LOA_0: 
+50:                                               ; preds = %48, %46, %44, %42, %40
+  %51 = call i64 @time(i64* %7)
+  %52 = trunc i64 %51 to i32
+  call void @srand(i32 %52)
+  %53 = call i32 @rand()
+  %54 = srem i32 %53, 4
+  %55 = add nsw i32 1, %54
+  store i32 %55, i32* %8, align 4
+  %56 = load i32, i32* %8, align 4
+  switch i32 %56, label %65 [
+    i32 1, label %57
+    i32 2, label %59
+    i32 3, label %61
+    i32 4, label %63
+  ]
+
+LOA_1: 
+65:                                               ; preds = %50
+  %66 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.11, i64 0, i64 0))
+  br label %67
+=============================================================
+=============================================================
+Checkpoint 20
+LoA Size: 2
+
+
+Checkpoint_20_A: 
+50:                                               ; preds = %48, %46, %44, %42, %40
+  %51 = call i64 @time(i64* %7)
+  %52 = trunc i64 %51 to i32
+  call void @srand(i32 %52)
+  %53 = call i32 @rand()
+  %54 = srem i32 %53, 4
+  %55 = add nsw i32 1, %54
+  store i32 %55, i32* %8, align 4
+  %56 = load i32, i32* %8, align 4
+  switch i32 %56, label %65 [
+    i32 1, label %57
+    i32 2, label %59
+    i32 3, label %61
+    i32 4, label %63
+  ]
+
+Checkpoint_20_B: 
+57:                                               ; preds = %50
+  %58 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.7, i64 0, i64 0))
+  br label %67
+LoA Details: 
+
+LOA_0: 
+50:                                               ; preds = %48, %46, %44, %42, %40
+  %51 = call i64 @time(i64* %7)
+  %52 = trunc i64 %51 to i32
+  call void @srand(i32 %52)
+  %53 = call i32 @rand()
+  %54 = srem i32 %53, 4
+  %55 = add nsw i32 1, %54
+  store i32 %55, i32* %8, align 4
+  %56 = load i32, i32* %8, align 4
+  switch i32 %56, label %65 [
+    i32 1, label %57
+    i32 2, label %59
+    i32 3, label %61
+    i32 4, label %63
+  ]
+
+LOA_1: 
+57:                                               ; preds = %50
+  %58 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.7, i64 0, i64 0))
+  br label %67
+=============================================================
+=============================================================
+Checkpoint 21
+LoA Size: 2
+
+
+Checkpoint_21_A: 
+50:                                               ; preds = %48, %46, %44, %42, %40
+  %51 = call i64 @time(i64* %7)
+  %52 = trunc i64 %51 to i32
+  call void @srand(i32 %52)
+  %53 = call i32 @rand()
+  %54 = srem i32 %53, 4
+  %55 = add nsw i32 1, %54
+  store i32 %55, i32* %8, align 4
+  %56 = load i32, i32* %8, align 4
+  switch i32 %56, label %65 [
+    i32 1, label %57
+    i32 2, label %59
+    i32 3, label %61
+    i32 4, label %63
+  ]
+
+Checkpoint_21_B: 
+59:                                               ; preds = %50
+  %60 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.8, i64 0, i64 0))
+  br label %67
+LoA Details: 
+
+LOA_0: 
+50:                                               ; preds = %48, %46, %44, %42, %40
+  %51 = call i64 @time(i64* %7)
+  %52 = trunc i64 %51 to i32
+  call void @srand(i32 %52)
+  %53 = call i32 @rand()
+  %54 = srem i32 %53, 4
+  %55 = add nsw i32 1, %54
+  store i32 %55, i32* %8, align 4
+  %56 = load i32, i32* %8, align 4
+  switch i32 %56, label %65 [
+    i32 1, label %57
+    i32 2, label %59
+    i32 3, label %61
+    i32 4, label %63
+  ]
+
+LOA_1: 
+59:                                               ; preds = %50
+  %60 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.8, i64 0, i64 0))
+  br label %67
+=============================================================
+=============================================================
+Checkpoint 22
+LoA Size: 2
+
+
+Checkpoint_22_A: 
+50:                                               ; preds = %48, %46, %44, %42, %40
+  %51 = call i64 @time(i64* %7)
+  %52 = trunc i64 %51 to i32
+  call void @srand(i32 %52)
+  %53 = call i32 @rand()
+  %54 = srem i32 %53, 4
+  %55 = add nsw i32 1, %54
+  store i32 %55, i32* %8, align 4
+  %56 = load i32, i32* %8, align 4
+  switch i32 %56, label %65 [
+    i32 1, label %57
+    i32 2, label %59
+    i32 3, label %61
+    i32 4, label %63
+  ]
+
+Checkpoint_22_B: 
+61:                                               ; preds = %50
+  %62 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.9, i64 0, i64 0))
+  br label %67
+LoA Details: 
+
+LOA_0: 
+50:                                               ; preds = %48, %46, %44, %42, %40
+  %51 = call i64 @time(i64* %7)
+  %52 = trunc i64 %51 to i32
+  call void @srand(i32 %52)
+  %53 = call i32 @rand()
+  %54 = srem i32 %53, 4
+  %55 = add nsw i32 1, %54
+  store i32 %55, i32* %8, align 4
+  %56 = load i32, i32* %8, align 4
+  switch i32 %56, label %65 [
+    i32 1, label %57
+    i32 2, label %59
+    i32 3, label %61
+    i32 4, label %63
+  ]
+
+LOA_1: 
+61:                                               ; preds = %50
+  %62 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.9, i64 0, i64 0))
+  br label %67
+=============================================================
+=============================================================
+Checkpoint 23
+LoA Size: 2
+
+
+Checkpoint_23_A: 
+50:                                               ; preds = %48, %46, %44, %42, %40
+  %51 = call i64 @time(i64* %7)
+  %52 = trunc i64 %51 to i32
+  call void @srand(i32 %52)
+  %53 = call i32 @rand()
+  %54 = srem i32 %53, 4
+  %55 = add nsw i32 1, %54
+  store i32 %55, i32* %8, align 4
+  %56 = load i32, i32* %8, align 4
+  switch i32 %56, label %65 [
+    i32 1, label %57
+    i32 2, label %59
+    i32 3, label %61
+    i32 4, label %63
+  ]
+
+Checkpoint_23_B: 
+63:                                               ; preds = %50
+  %64 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.10, i64 0, i64 0))
+  br label %67
+LoA Details: 
+
+LOA_0: 
+50:                                               ; preds = %48, %46, %44, %42, %40
+  %51 = call i64 @time(i64* %7)
+  %52 = trunc i64 %51 to i32
+  call void @srand(i32 %52)
+  %53 = call i32 @rand()
+  %54 = srem i32 %53, 4
+  %55 = add nsw i32 1, %54
+  store i32 %55, i32* %8, align 4
+  %56 = load i32, i32* %8, align 4
+  switch i32 %56, label %65 [
+    i32 1, label %57
+    i32 2, label %59
+    i32 3, label %61
+    i32 4, label %63
+  ]
+
+LOA_1: 
+63:                                               ; preds = %50
+  %64 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.10, i64 0, i64 0))
+  br label %67
+=============================================================
+=============================================================
+Checkpoint 24
+LoA Size: 0
+
+
+Checkpoint_24_A: 
+65:                                               ; preds = %50
+  %66 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.11, i64 0, i64 0))
+  br label %67
+
+Checkpoint_24_B: 
+67:                                               ; preds = %65, %63, %61, %59, %57
+  %68 = load i32, i32* %2, align 4
+  ret i32 %68
+=============================================================
+=============================================================
+Checkpoint 25
+LoA Size: 0
+
+
+Checkpoint_25_A: 
+57:                                               ; preds = %50
+  %58 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.7, i64 0, i64 0))
+  br label %67
+
+Checkpoint_25_B: 
+67:                                               ; preds = %65, %63, %61, %59, %57
+  %68 = load i32, i32* %2, align 4
+  ret i32 %68
+=============================================================
+=============================================================
+Checkpoint 26
+LoA Size: 0
+
+
+Checkpoint_26_A: 
+59:                                               ; preds = %50
+  %60 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.8, i64 0, i64 0))
+  br label %67
+
+Checkpoint_26_B: 
+67:                                               ; preds = %65, %63, %61, %59, %57
+  %68 = load i32, i32* %2, align 4
+  ret i32 %68
+=============================================================
+=============================================================
+Checkpoint 27
+LoA Size: 0
+
+
+Checkpoint_27_A: 
+61:                                               ; preds = %50
+  %62 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.9, i64 0, i64 0))
+  br label %67
+
+Checkpoint_27_B: 
+67:                                               ; preds = %65, %63, %61, %59, %57
+  %68 = load i32, i32* %2, align 4
+  ret i32 %68
+=============================================================
+=============================================================
+Checkpoint 28
+LoA Size: 0
+
+
+Checkpoint_28_A: 
+63:                                               ; preds = %50
+  %64 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.10, i64 0, i64 0))
+  br label %67
+
+Checkpoint_28_B: 
+67:                                               ; preds = %65, %63, %61, %59, %57
+  %68 = load i32, i32* %2, align 4
+  ret i32 %68
+=============================================================
+=============================================================
+Checkpoint 29
+LoA Size: 2
+
+
+Checkpoint_29_A: 
+b1.exit:                                          ; preds = %15, %17
+  %19 = bitcast i32* %1 to i8*
+  call void @llvm.lifetime.end.p0i8(i64 4, i8* %19)
+  %20 = load i32, i32* %4, align 4
+  %21 = icmp eq i32 %20, 1
+  br i1 %21, label %22, label %24
+
+Checkpoint_29_B: 
+22:                                               ; preds = %b1.exit
+  %23 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.3, i64 0, i64 0))
+  br label %27
+LoA Details: 
+
+LOA_0: 
+b1.exit:                                          ; preds = %15, %17
+  %19 = bitcast i32* %1 to i8*
+  call void @llvm.lifetime.end.p0i8(i64 4, i8* %19)
+  %20 = load i32, i32* %4, align 4
+  %21 = icmp eq i32 %20, 1
+  br i1 %21, label %22, label %24
+
+LOA_1: 
+22:                                               ; preds = %b1.exit
+  %23 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.3, i64 0, i64 0))
+  br label %27
+=============================================================
+=============================================================
+Checkpoint 30
+LoA Size: 2
+
+
+Checkpoint_30_A: 
+b1.exit:                                          ; preds = %15, %17
+  %19 = bitcast i32* %1 to i8*
+  call void @llvm.lifetime.end.p0i8(i64 4, i8* %19)
+  %20 = load i32, i32* %4, align 4
+  %21 = icmp eq i32 %20, 1
+  br i1 %21, label %22, label %24
+
+Checkpoint_30_B: 
+24:                                               ; preds = %b1.exit
+  %25 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.5, i64 0, i64 0))
+  %26 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.4, i64 0, i64 0))
+  br label %27
+LoA Details: 
+
+LOA_0: 
+b1.exit:                                          ; preds = %15, %17
+  %19 = bitcast i32* %1 to i8*
+  call void @llvm.lifetime.end.p0i8(i64 4, i8* %19)
+  %20 = load i32, i32* %4, align 4
+  %21 = icmp eq i32 %20, 1
+  br i1 %21, label %22, label %24
+
+LOA_1: 
+24:                                               ; preds = %b1.exit
+  %25 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.5, i64 0, i64 0))
+  %26 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.4, i64 0, i64 0))
+  br label %27
+=============================================================
+=============================================================
+Checkpoint 31
+LoA Size: 0
+
+
+Checkpoint_31_A: 
+17:                                               ; preds = %11
+  %18 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([31 x i8], [31 x i8]* @.str.1, i64 0, i64 0))
+  br label %b1.exit
+
+Checkpoint_31_B: 
+b1.exit:                                          ; preds = %15, %17
+  %19 = bitcast i32* %1 to i8*
+  call void @llvm.lifetime.end.p0i8(i64 4, i8* %19)
+  %20 = load i32, i32* %4, align 4
+  %21 = icmp eq i32 %20, 1
+  br i1 %21, label %22, label %24
+=============================================================
+=============================================================
+Checkpoint 32
+LoA Size: 0
+
+
+Checkpoint_32_A: 
+15:                                               ; preds = %11
+  %16 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str, i64 0, i64 0))
+  br label %b1.exit
+
+Checkpoint_32_B: 
+b1.exit:                                          ; preds = %15, %17
+  %19 = bitcast i32* %1 to i8*
+  call void @llvm.lifetime.end.p0i8(i64 4, i8* %19)
+  %20 = load i32, i32* %4, align 4
+  %21 = icmp eq i32 %20, 1
+  br i1 %21, label %22, label %24
+=============================================================
+
+BCÀÞ5     b0$MY¾f}û´OÈ$D2 !  O  !       #‘AÈI29’„%‹b€EB’B¤28K
+2RˆHpÄ!#D‡ŒA’dÈ± CFˆ É2R„*(*1|°\‘ ÅÈ   ‰      2"H	 bF !+$˜!%$˜'…¤`Rd\ $e‚À›#@ÔPÐ@C m tF LHÍ€+°FÎŒ #9G 
+D@+Y3$Ú›#¦   Q     ˜àÿÿÿÿ  ? þ €>Ø@ÀˆA    I     †@    &|À;ø; ƒ6€‡qhvHw¨|hƒsp‡zØ`
+åÐí åÐð w z0r s m rpq s z0rÐð w z`t v@mv@z`tÐæ€p q xÐî€zv s z`tÐ³r€J’A†Œ	4Bv	" B²}a‡Áà%    @@ ;$Â†/	     Ø!)F1€A     °C‚Œcƒ$      `‡dÇ I  @   À‰3Ža’  €     €’Ç@I  @   À	Œb(ƒ$      `‡äF1˜A     °C¢£Î 	     Ø!éÁQh     ìBá8†4H    €€ †T¨ (           0¤RÃ        €  €!,
+           ©d!P            `H5          @ C*Z           RÕB           @ ÀÊ          € †T¸ (           0¤ÒA         €  €!/
+           ©|€            `H%…         @ Cªs ,           R­        @ Àê0€         € †T'aa@           ±A ðÒ  @   3   2˜LŒ	&GÆC
+Ú‰c ô4³Ùe2(í™Óò9$–‡Ýc´‚†zâ(=Ãlv™J»Aóòøí&ƒÄò°{ŒVPÑF,¥ç q˜Í.“t”ƒÒsÐ8Ìf—É
+eÊ ô4³Ùe²B2(=Ãlv™¬PÆJÏAã0›]&+¨hsŽÒsÐ8Ìf—É
+mÎ2Pz‡Ùì2Y¡ÍyJÏAã0›]&+´9Ó@é9hf³ËdeÜo::í>ƒÐey™X	  ±  —   3€Äáf=ˆC8„ÃŒB€yxs˜qæ íô€3BÂÁÎ¡f0=ˆC8„ƒÌ=ÈC=Œ=ÌxŒtp{yH‡ppzpvx‡p ‡Ììá0n0ãððP3ÄÞ!Ø!Âaf0‰;¼ƒ;ÐC9´<¼ƒ<„;Ìðv`{h7h‡rh7€‡p‡p`v(vøvx‡w€‡_‡q‡r˜‡y˜,îðîàõÀì0bÈ¡ä¡Ì¡ä¡ÜaÊ!ÄÊaÖC9ÈC9˜C9ÈC9¸Ã8”C8ˆ;”Ã/¼ƒ<ü‚;Ô;°ÃÇi‡pX‡rpƒthx`‡t‡t ‡ÎSî òPäã@á ìP3 (ÜÁÂAÒ!ÜÜàäáêfQ8°C:œƒ;ÌP$v`{h7`‡wxx˜QLôðP3jÊaè!ÞÁ~ä¡Ì!ðaT…ƒ8ÌÃ;°C=ÐC9üÂ<äC;ˆÃ;°ÃŒÅ
+‡y˜‡w‡tz(r˜\ãìÀåPó0#ÁÒAäáØáÞfH;°ƒ=´ƒ„Ã8ŒC9ÌÃ<¸Á9ÈÃ;Ô<ÌH´qv`q‡qX‡ÛÆì`íàð å0å öPnã0å0óàéàäPø0#âìaÂØáì!æ!Ä!Ø!è!f ;¼C=¸9”ƒ9ÌX¼ppwxzzH‡wp  y   "   rH Cˆ	r2H #Œ‘‘ÑD (d<12BŽ!£(l Š  wchar_sizeclang version 10.0.0-4ubuntu1 #LŒ 0j0Ã0Ä #	ÊˆÍ®Í¥í¬Ž­ÌÅŒ-ìln”€H…Í®Í%¬Ìn”   ©  !   
+r(‡w€zXp˜C=¸Ã8°C9ÐÃ‚æÆ¡èAÂÁæ!è!ÞÁ4ã`çPá ä@á çPô°€y(‡p`vx‡qz(rXpœÃ8´;¤ƒ=”ÃkØ!ÜáÜ äaÜ èÂaÐ¡ÈaÂØÑ     Ì<¤ƒ;œ;”= ƒ<”C8Ã   a      D,      ÄŠ‚è µ¡Ž@ (6 Ø`¨c Š(6    3“£0l@Å PÀÆpC`€Á,C # ‚`à”A1K0Œ ‚cÅ,Á    a   
+   A,      DG ¨u†@­µ   # ‚`à€A   a   
+   A,      DG ¨uÈ@­µ   # ‚`à€A   a   
+   A,      DG ¨uA­µ   # ‚`à€A   a      A,      DG ¨uHA­µCBPk@­  # ‚`à„0bP  Ž
+a   
+   A,      DG ¨uˆA­µ   # ‚`à€A   a   
+   A,      DG ¨uÆA­µ   # ‚`à€A   a   
+   A,      DG ¨uB­µ   # ‚`à€A   a   
+   A,      DG ¨uFB­µ   # ‚`à€A   a   
+   A,      DG ¨u†B­µ   # ‚`à€A   a   ¯   Y,       ÄF Š€h!+
+¢# Ô†: Þ€zƒ¡Ž¨7 Þ`¨ã@ê¨7ê8‚zê†:„ Þ€zƒ¡ŽÂ¨7 Þ`¨ã@ê¨7 Ve@m¨£0ê¨7ê(„zê†:
+#¡Þ€zƒ¡ŽÂP¨7 Þ`¨ã@ê¨7    3“£0Á0i0
+3“£0Á0i0
+3“£0Á0i0
+3“¤0Á0i0
+ÃÄ±À°at0l@Ú ÁÆpCàÁ,C€©´10 Ì¸`Ø€X¶ …á†€ƒYaF
+ ÁÀñƒm–€1( ç¶Y"Ÿ¶# ‚`€ÉAÔ°1Ü˜Ì2F0bP  Î(x³ÇˆA€ 8¤à ‚S
+Þ,Á1KŒ ‚c
+Þ,A2l@Hf0 ³
+Il7j`³Œ ‚“
+`@„W0 ³Ê°a½Á ÅÆ0DiÐ°ƒ@# ‚`à´BÌH# ‚`à¸BÌH# ‚`à¼BÌH# ‚`àÀBÌH# ‚`àÄBÌH# ‚``™Â–ƒƒ A0R!1  è.ÀC=@`Ø€ø‚ a&¸Ò`b
+*5°F
+ ÁÀÁ6˜%ÀF
+ ÁÀÉ6˜%ÀF
+ ÁÀÑ6˜%ÀF
+ ÁÀÙ6˜%ÀF
+ ÁÀá6˜%ÀhØØ    GpµO\È!1     
+@?XàA@ Q’(ã4ÒDUÖsa™¶qÍC ‚pƒP DaH¢,L8i0a        q      2"„‘è J€¶!L€Î(áM€êHaO€‚háX€š     e  Ç   ”0         2   L      X       X            Ï      â                              H      H      ÿÿÿÿ $  J      J      ÿÿÿÿ$  P      P      ÿÿÿÿ $  R      R      ÿÿÿÿ $  S      S      ÿÿÿÿ $  T      T      ÿÿÿÿ $  U      U      ÿÿÿÿ $  V      V      ÿÿÿÿ $  X      X      ÿÿÿÿ $  Z      Z      ÿÿÿÿ $  \      \      ÿÿÿÿ $  ^      ^      ÿÿÿÿ $  b      b      ÿÿÿÿ$  g      g      ÿÿÿÿ$  k      k      ÿÿÿÿ$  o      o      ÿÿÿÿ,  ‡      ‡      ÿÿÿÿ,  í             ÿÿÿÿ   ó            ÿÿÿÿ   û      
+      ÿÿÿÿ              ÿÿÿÿ              ÿÿÿÿ              ÿÿÿÿ        "      ÿÿÿÿ   #     (      ÿÿÿÿ   +     .      ÿÿÿÿ   3     4      ÿÿÿÿ   ;  	   :      ÿÿÿÿ   D  	   A      ÿÿÿÿ       ]  W   ”­   .str.str.1.str.2.str.3.str.4.str.5.str.6.str.7.str.8.str.9.str.10.str.11b1printfb2cedfg1g2g3g4mainsrandtimerandllvm.lifetime.start.p0i8llvm.lifetime.end.p0i813.0.0git 8472f8308855a4242747051dbc774306b9f169afx86_64-pc-linux-gnubranches2.c.L.str.L.str.1.L.str.2.L.str.3.L.str.4.L.str.5.L.str.6.L.str.7.L.str.8.L.str.9.L.str.10.L.str.11       
