@@ -15,7 +15,6 @@ generate_dot() {
   local title=$2
   local cfg_type=$3
   local is_inline=$4
-  local is_optimized=$5
 
   local dir_name=$dir_name_prefix/dot-scarr
 
@@ -33,8 +32,10 @@ generate_dot() {
   fi
 
   mkdir -p $dir_name
+  echo cd $dir_name
   cd $dir_name
-  $LLVM_OPT_CMD ../$title.ll -passes=$llvm_passes > loa.txt
+  echo $LLVM_OPT_CMD ../$title.ll -passes=$llvm_passes pipe loa-main.txt
+  $LLVM_OPT_CMD ../$title.ll -passes=$llvm_passes > loa-main.txt
   for file in $(ls -A); do
     if [ "${file##*.}" = "dot" ]; then
       baseFileName="$(basename "$file" .dot)"
@@ -62,19 +63,21 @@ if [ -n "$is_optimized" ] && [  "$is_optimized" = "optimized" ]; then
   dir_name_prefix=$title/opt
   mkdir -p $dir_name_prefix
   clang -emit-llvm $title.c -S -o $dir_name_prefix/$title.ll
+  # Comment attributes line because it prevent the pass to proces the IR
+  sed -i 's/^attributes/;&/g' $dir_name_prefix/$title.ll
 
-  generate_dot $dir_name_prefix $title "only" "no-inline" "optimized"
-  generate_dot $dir_name_prefix $title "default" "on-inline" "optimized"
-  generate_dot $dir_name_prefix $title "only" "inline" "optimized"
-  generate_dot $dir_name_prefix $title "default" "inline" "optimized"
+  generate_dot $dir_name_prefix $title "only" "no-inline"
+  generate_dot $dir_name_prefix $title "default" "no-inline"
+  generate_dot $dir_name_prefix $title "only" "inline"
+  generate_dot $dir_name_prefix $title "default" "inline"
 else
   mkdir -p $dir_name_prefix
   clang -emit-llvm $title.c -S -Xclang -disable-O0-optnone -fno-discard-value-names -o $dir_name_prefix/$title.ll
+  # Comment attributes line because it prevent the pass to proces the IR
+  sed -i 's/^attributes/;&/g' $dir_name_prefix/$title.ll
 
-  generate_dot $dir_name_prefix $title "only" "no-inline" "no-optimized"
-  generate_dot $dir_name_prefix $title "default" "on-inline" "no-optimized"
-  generate_dot $dir_name_prefix $title "only" "inline" "no-optimized"
-  generate_dot $dir_name_prefix $title "default" "inline" "no-optimized"
+  generate_dot $dir_name_prefix $title "only" "no-inline"
+  generate_dot $dir_name_prefix $title "default" "no-inline"
+  generate_dot $dir_name_prefix $title "only" "inline"
+  generate_dot $dir_name_prefix $title "default" "inline"
 fi
-# Comment attributes line because it prevent the pass to proces the IR
-sed -i 's/^attributes/;&/g' $dir_name_prefix/$title.ll
