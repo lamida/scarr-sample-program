@@ -1,220 +1,0 @@
-=============================================================
-ScaRR Offline Measurement Statistics
-=============================================================
-Offline Measurement Size: 4
-Number of Checkpoints: 4
-Number of List of Actions: 4
-=============================================================
-Checkpoints and LoA Details: 
-=============================================================
-Measurement 0
-LoA Size: 2
-
-Checkpoint_0_A: 
-entry:
-  %result.addr.i = alloca i8*, align 8
-  %rnd.i = alloca i32, align 4
-  %retval = alloca i32, align 4
-  %access = alloca i8*, align 8
-  %result = alloca i8*, align 8
-  store i32 0, i32* %retval, align 4
-  %0 = bitcast i32* %rnd.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %0)
-  %call.i = call i32 (...) @rand()
-  %rem.i = srem i32 %call.i, 2
-  store i32 %rem.i, i32* %rnd.i, align 4
-  %call1.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str, i64 0, i64 0))
-  %1 = load i32, i32* %rnd.i, align 4
-  %cmp.i = icmp eq i32 %1, 1
-  %2 = zext i1 %cmp.i to i64
-  %cond.i = select i1 %cmp.i, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.2, i64 0, i64 0)
-  %3 = bitcast i32* %rnd.i to i8*
-  call void @llvm.lifetime.end.p0i8(i64 4, i8* %3)
-  store i8* %cond.i, i8** %access, align 8
-  store i8* getelementptr inbounds ([1 x i8], [1 x i8]* @.str.9, i64 0, i64 0), i8** %result, align 8
-  %4 = load i8*, i8** %access, align 8
-  %call1 = call i32 @strcmp(i8* %4, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0))
-  %cmp = icmp eq i32 %call1, 0
-  br i1 %cmp, label %if.then, label %if.else
-
-Checkpoint_0_B: 
-if.then:                                          ; preds = %entry
-  %call.i1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.3, i64 0, i64 0))
-  store i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.4, i64 0, i64 0), i8** %result, align 8
-  br label %if.end
-LoA Details: 
-
-LOA_0: 
-entry:
-  %result.addr.i = alloca i8*, align 8
-  %rnd.i = alloca i32, align 4
-  %retval = alloca i32, align 4
-  %access = alloca i8*, align 8
-  %result = alloca i8*, align 8
-  store i32 0, i32* %retval, align 4
-  %0 = bitcast i32* %rnd.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %0)
-  %call.i = call i32 (...) @rand()
-  %rem.i = srem i32 %call.i, 2
-  store i32 %rem.i, i32* %rnd.i, align 4
-  %call1.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str, i64 0, i64 0))
-  %1 = load i32, i32* %rnd.i, align 4
-  %cmp.i = icmp eq i32 %1, 1
-  %2 = zext i1 %cmp.i to i64
-  %cond.i = select i1 %cmp.i, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.2, i64 0, i64 0)
-  %3 = bitcast i32* %rnd.i to i8*
-  call void @llvm.lifetime.end.p0i8(i64 4, i8* %3)
-  store i8* %cond.i, i8** %access, align 8
-  store i8* getelementptr inbounds ([1 x i8], [1 x i8]* @.str.9, i64 0, i64 0), i8** %result, align 8
-  %4 = load i8*, i8** %access, align 8
-  %call1 = call i32 @strcmp(i8* %4, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0))
-  %cmp = icmp eq i32 %call1, 0
-  br i1 %cmp, label %if.then, label %if.else
-
-LOA_1: 
-if.then:                                          ; preds = %entry
-  %call.i1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.3, i64 0, i64 0))
-  store i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.4, i64 0, i64 0), i8** %result, align 8
-  br label %if.end
-=============================================================
-=============================================================
-Measurement 1
-LoA Size: 2
-
-
-Checkpoint_1_A: 
-entry:
-  %result.addr.i = alloca i8*, align 8
-  %rnd.i = alloca i32, align 4
-  %retval = alloca i32, align 4
-  %access = alloca i8*, align 8
-  %result = alloca i8*, align 8
-  store i32 0, i32* %retval, align 4
-  %0 = bitcast i32* %rnd.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %0)
-  %call.i = call i32 (...) @rand()
-  %rem.i = srem i32 %call.i, 2
-  store i32 %rem.i, i32* %rnd.i, align 4
-  %call1.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str, i64 0, i64 0))
-  %1 = load i32, i32* %rnd.i, align 4
-  %cmp.i = icmp eq i32 %1, 1
-  %2 = zext i1 %cmp.i to i64
-  %cond.i = select i1 %cmp.i, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.2, i64 0, i64 0)
-  %3 = bitcast i32* %rnd.i to i8*
-  call void @llvm.lifetime.end.p0i8(i64 4, i8* %3)
-  store i8* %cond.i, i8** %access, align 8
-  store i8* getelementptr inbounds ([1 x i8], [1 x i8]* @.str.9, i64 0, i64 0), i8** %result, align 8
-  %4 = load i8*, i8** %access, align 8
-  %call1 = call i32 @strcmp(i8* %4, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0))
-  %cmp = icmp eq i32 %call1, 0
-  br i1 %cmp, label %if.then, label %if.else
-
-Checkpoint_1_B: 
-if.else:                                          ; preds = %entry
-  %call.i2 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.5, i64 0, i64 0))
-  store i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.6, i64 0, i64 0), i8** %result, align 8
-  br label %if.end
-LoA Details: 
-
-LOA_0: 
-entry:
-  %result.addr.i = alloca i8*, align 8
-  %rnd.i = alloca i32, align 4
-  %retval = alloca i32, align 4
-  %access = alloca i8*, align 8
-  %result = alloca i8*, align 8
-  store i32 0, i32* %retval, align 4
-  %0 = bitcast i32* %rnd.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %0)
-  %call.i = call i32 (...) @rand()
-  %rem.i = srem i32 %call.i, 2
-  store i32 %rem.i, i32* %rnd.i, align 4
-  %call1.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str, i64 0, i64 0))
-  %1 = load i32, i32* %rnd.i, align 4
-  %cmp.i = icmp eq i32 %1, 1
-  %2 = zext i1 %cmp.i to i64
-  %cond.i = select i1 %cmp.i, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.2, i64 0, i64 0)
-  %3 = bitcast i32* %rnd.i to i8*
-  call void @llvm.lifetime.end.p0i8(i64 4, i8* %3)
-  store i8* %cond.i, i8** %access, align 8
-  store i8* getelementptr inbounds ([1 x i8], [1 x i8]* @.str.9, i64 0, i64 0), i8** %result, align 8
-  %4 = load i8*, i8** %access, align 8
-  %call1 = call i32 @strcmp(i8* %4, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0))
-  %cmp = icmp eq i32 %call1, 0
-  br i1 %cmp, label %if.then, label %if.else
-
-LOA_1: 
-if.else:                                          ; preds = %entry
-  %call.i2 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.5, i64 0, i64 0))
-  store i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.6, i64 0, i64 0), i8** %result, align 8
-  br label %if.end
-=============================================================
-=============================================================
-Measurement 2
-LoA Size: 0
-
-
-Checkpoint_2_A: 
-if.then:                                          ; preds = %entry
-  %call.i1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.3, i64 0, i64 0))
-  store i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.4, i64 0, i64 0), i8** %result, align 8
-  br label %if.end
-
-Checkpoint_2_B: 
-if.end:                                           ; preds = %if.else, %if.then
-  %5 = load i8*, i8** %result, align 8
-  %6 = bitcast i8** %result.addr.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 8, i8* %6)
-  store i8* %5, i8** %result.addr.i, align 8
-  %7 = load i8*, i8** %result.addr.i, align 8
-  %call.i3 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.7, i64 0, i64 0), i8* %7)
-  %8 = bitcast i8** %result.addr.i to i8*
-  call void @llvm.lifetime.end.p0i8(i64 8, i8* %8)
-  %call.i4 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.8, i64 0, i64 0))
-  %9 = load i32, i32* %retval, align 4
-  ret i32 %9
-=============================================================
-=============================================================
-Measurement 3
-LoA Size: 0
-
-
-Checkpoint_3_A: 
-if.else:                                          ; preds = %entry
-  %call.i2 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.5, i64 0, i64 0))
-  store i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.6, i64 0, i64 0), i8** %result, align 8
-  br label %if.end
-
-Checkpoint_3_B: 
-if.end:                                           ; preds = %if.else, %if.then
-  %5 = load i8*, i8** %result, align 8
-  %6 = bitcast i8** %result.addr.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 8, i8* %6)
-  store i8* %5, i8** %result.addr.i, align 8
-  %7 = load i8*, i8** %result.addr.i, align 8
-  %call.i3 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.7, i64 0, i64 0), i8* %7)
-  %8 = bitcast i8** %result.addr.i to i8*
-  call void @llvm.lifetime.end.p0i8(i64 8, i8* %8)
-  %call.i4 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.8, i64 0, i64 0))
-  %9 = load i32, i32* %retval, align 4
-  ret i32 %9
-=============================================================
-
-BCÀŞ5     b0$MY¾f}û´OÈ$D2 !  è  !       #‘AÈI29’„%‹b€EB’BÄ28K
-2bˆHpÄ!#D‡ŒA’dÈ± CFˆ É2b„*(*1|°\‘ ÆÈ   ‰      2"ˆ	 bF !+$˜!%$˜'…¤`bd\ $f‚€æU (Ğ€5 ¨P
-€µ (Ñ€ ¨Ñ€ ("ÀQs``‹.+Xe# FØ&âL°‘g‹@3XÓDâ(˜a#'*Èš#hš Q     ˜àÿÿÿÿ  ? ş €>Ø@ÀˆA    I     †@    &|À;ø; ƒ6€‡qhvHw¨|hƒsp‡zØ`
-åĞí åĞğ w z0r s m rpq s z0rĞğ w z`t v@mv@z`tĞæ€p q xĞî€zv s z`tĞ³r€J’B†Œ	4Bö Š|a‡Á`%    @@ ;$Â†+	     Ø!)F1`I  @   À	2!K    €€ vH–qZ     °CâŒdØ’  €     €’ËÀ%    @@ ;$40š¡K    €€ vHn`<ƒ—     ìèÀˆ†/	     RéAB         @ Àjˆ         € †T§`d@          0¤j…‰         €  €!8T           ©êá            `HŒ          @ Cª– À           € †T1aˆ          ©n+           R½…U@           ±A 0º  @    2˜LŒ	&GÆC
-61ˆéGš‡šhX ¦ƒŠ-ˆ(r":v2ˆé"¤BÂ †i
-G§ü»
-ËË ¸<mO³Ëç29DÉV1ıTóDH…,„A?Ò-Š$İö0;MQ£BiNÏ*Ş…LHcø¾OÑ Y%P    ±  —   3€Äáf=ˆC8„ÃŒB€yxs˜qæ íô€3BÂÁÎ¡f0=ˆC8„ƒÌ=ÈC=Œ=ÌxŒtp{yH‡ppzpvx‡p ‡Ììá0n0ãğğP3ÄŞ!Ø!Âaf0‰;¼ƒ;ĞC9´<¼ƒ<„;Ìğv`{h7h‡rh7€‡p‡p`v(vøvx‡w€‡_‡q‡r˜‡y˜,îğîàõÀì0bÈ¡ä¡Ì¡ä¡ÜaÊ!ÄÊaÖC9ÈC9˜C9ÈC9¸Ã8”C8ˆ;”Ã/¼ƒ<ü‚;Ô;°ÃÇi‡pX‡rpƒthx`‡t‡t ‡ÎSî òPäã@á ìP3 (ÜÁÂAÒ!ÜÜàäáêfQ8°C:œƒ;ÌP$v`{h7`‡wxx˜QLôğP3jÊaè!ŞÁ~ä¡Ì!ğaT…ƒ8ÌÃ;°C=ĞC9üÂ<äC;ˆÃ;°ÃŒÅ
-‡y˜‡w‡tz(r˜\ãìÀåPó0#ÁÒAäáØáŞfH;°ƒ=´ƒ„Ã8ŒC9ÌÃ<¸Á9ÈÃ;Ô<ÌH´qv`q‡qX‡ÛÆì`íàğ å0å öPnã0å0óàéàäPø0#âìaÂØáì!æ!Ä!Ø!è!f ;¼C=¸9”ƒ9ÌX¼ppwxzzH‡wp  y   "   rH Cˆ	r2H #Œ‘‘ÑD (d<12B!£(l Š  wchar_sizeclang version 10.0.0-4ubuntu1 #Ö7‚`ÁÃ3‚Œ&(#66»6—¶7²:¶23¶°³¹Q"66»6—4²27ºQ‚  ©  !   
-r(‡w€zXp˜C=¸Ã8°C9ĞÃ‚æÆ¡èAÂÁæ!è!ŞÁ4ã`çPá ä@á çPô°€y(‡p`vx‡qz(rXpœÃ8´;¤ƒ=”ÃkØ!ÜáÜ äaÜ èÂaĞ¡ÈaÂØÑ     Ì<¤ƒ;œ;”= ƒ<”C8Ã   a   &   A,   
-   d‘# 4u@b@b0Ô1ˆˆÁPGad d   3–õÂˆ€ \Ü‡C0 # ‚`uÖn0È€Œé†6   
-   ¶2Ìs ÑLf&CÔ†2Dc-„à4ƒ°,–RÀ²Ô        a      A,      D Ğ4Ôq „„ÁPÇdd   # ‚`aÂ
-á@   PÍaFBÀ²     a      A,      D Ğ4Ô‘(„„ÁPÇÂdd   # ‚`aÂ
-á@   PÍaFBÀ²     a      A,      D Ğ4ÔÑ8ˆˆ 3“õ‘Â°@ÁDF Á Ó†@Ã     PÍaF²D„D-“Cd&„ ,‹…!QË       a      A,      D Ğ4Ôñ@„„ # ‚`]†   PÍa6BÀ²     a      D,      d Yd‘# 4u@d@d0Ô1ÁPGad@d@C‘”uÈ@d@d0Ôq ÁPG¢d@d@CcY4u4ÎAd@d0Ôñ@    3“õ‘ÂL„e}£0aYß(ÌDLÖG
-3“õ‘Â°1PÄ´# ‚`Pc@# ‚`p­Á”G0 # ‚`±ÁDˆ5†‚2 cºÁª„d¦10 ƒ2P.6  †Å" Z&2b`  bĞA6Ü|`0ËÁˆA€ du€F ³ÃˆA€ dvpÏE ³=IjÚ A0(9À‚a¢€ª‰Œ ‚A¦X×´# ‚`Pt°# ‚`ñAF—56   #   4Ìc<†à4ƒLµL>0‘Î! ËRûˆ°,>RŸÀ>±H„°,>r›Ğ! Ëâ#¶!°,>‚_Àştı°,µÉ1UÀr ÑLf3 „$İ€>ÑfcÀ²øˆéóøˆÅQ3øˆİÁøˆÑ!QË!1     
-@‚8XP ÂÀÁ" 3X Q€q         q      2"„
-ŞØ`H€šøàJ€È‘M       e  —   ”°      Å   2   L      X       X      P      ÷      
-            P                 :   	   :   	   ÿÿÿÿ $  C      C      ÿÿÿÿ$  G      G      ÿÿÿÿ$  M      M      ÿÿÿÿ $  `      `      ÿÿÿÿ $  u      u      ÿÿÿÿ $              ÿÿÿÿ $              ÿÿÿÿ $  ‘      ‘      ÿÿÿÿ$  —      —      ÿÿÿÿ,  ¯      ¯      ÿÿÿÿ,              ÿÿÿÿ              ÿÿÿÿ        
-      ÿÿÿÿ   '           ÿÿÿÿ   /           ÿÿÿÿ   7           ÿÿÿÿ   ?     "      ÿÿÿÿ   G     (      ÿÿÿÿ   O     .      ÿÿÿÿ   W     4      ÿÿÿÿ       ]  [   ”¿   .str.str.1.str.2.str.3.str.4.str.5.str.6.str.7.str.8.str.9get_inputrandprintfget_privileged_infoget_unprivileged_infoprint_outputmy_terminatemainstrcmpllvm.lifetime.start.p0i8llvm.lifetime.end.p0i813.0.0git 8c7ae532e55c14b18428aff93fda31f1c48ea061x86_64-pc-linux-gnuscarr.c.L.str.L.str.1.L.str.2.L.str.3.L.str.4.L.str.5.L.str.6.L.str.7.L.str.8.L.str.9     

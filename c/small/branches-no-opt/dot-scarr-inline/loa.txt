@@ -1,684 +1,0 @@
-=============================================================
-ScaRR Offline Measurement Statistics
-=============================================================
-Offline Measurement Size: 22
-Number of Checkpoints: 16
-Number of List of Actions: 22
-=============================================================
-Checkpoints and LoA Details: 
-=============================================================
-Measurement 0
-LoA Size: 2
-
-Checkpoint_0_A: 
-entry:
-  %r.i = alloca i32, align 4
-  %x.i = alloca i32, align 4
-  %retval = alloca i32, align 4
-  %a = alloca i32, align 4
-  %z = alloca i32, align 4
-  store i32 0, i32* %retval, align 4
-  store i32 1, i32* %a, align 4
-  %0 = load i32, i32* %a, align 4
-  %cmp = icmp eq i32 %0, 1
-  br i1 %cmp, label %if.then, label %if.else
-
-Checkpoint_0_B: 
-if.then:                                          ; preds = %entry
-  %1 = bitcast i32* %x.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %1)
-  store i32 10, i32* %x.i, align 4
-  %2 = load i32, i32* %x.i, align 4
-  %cmp.i = icmp eq i32 %2, 10
-  br i1 %cmp.i, label %if.then.i, label %if.else.i
-LoA Details: 
-
-LOA_0: 
-entry:
-  %r.i = alloca i32, align 4
-  %x.i = alloca i32, align 4
-  %retval = alloca i32, align 4
-  %a = alloca i32, align 4
-  %z = alloca i32, align 4
-  store i32 0, i32* %retval, align 4
-  store i32 1, i32* %a, align 4
-  %0 = load i32, i32* %a, align 4
-  %cmp = icmp eq i32 %0, 1
-  br i1 %cmp, label %if.then, label %if.else
-
-LOA_1: 
-if.then:                                          ; preds = %entry
-  %1 = bitcast i32* %x.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %1)
-  store i32 10, i32* %x.i, align 4
-  %2 = load i32, i32* %x.i, align 4
-  %cmp.i = icmp eq i32 %2, 10
-  br i1 %cmp.i, label %if.then.i, label %if.else.i
-=============================================================
-=============================================================
-Measurement 1
-LoA Size: 2
-
-
-Checkpoint_1_A: 
-entry:
-  %r.i = alloca i32, align 4
-  %x.i = alloca i32, align 4
-  %retval = alloca i32, align 4
-  %a = alloca i32, align 4
-  %z = alloca i32, align 4
-  store i32 0, i32* %retval, align 4
-  store i32 1, i32* %a, align 4
-  %0 = load i32, i32* %a, align 4
-  %cmp = icmp eq i32 %0, 1
-  br i1 %cmp, label %if.then, label %if.else
-
-Checkpoint_1_B: 
-if.else:                                          ; preds = %entry
-  %call.i1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.2, i64 0, i64 0))
-  br label %if.end
-LoA Details: 
-
-LOA_0: 
-entry:
-  %r.i = alloca i32, align 4
-  %x.i = alloca i32, align 4
-  %retval = alloca i32, align 4
-  %a = alloca i32, align 4
-  %z = alloca i32, align 4
-  store i32 0, i32* %retval, align 4
-  store i32 1, i32* %a, align 4
-  %0 = load i32, i32* %a, align 4
-  %cmp = icmp eq i32 %0, 1
-  br i1 %cmp, label %if.then, label %if.else
-
-LOA_1: 
-if.else:                                          ; preds = %entry
-  %call.i1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.2, i64 0, i64 0))
-  br label %if.end
-=============================================================
-=============================================================
-Measurement 2
-LoA Size: 2
-
-
-Checkpoint_2_A: 
-if.then:                                          ; preds = %entry
-  %1 = bitcast i32* %x.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %1)
-  store i32 10, i32* %x.i, align 4
-  %2 = load i32, i32* %x.i, align 4
-  %cmp.i = icmp eq i32 %2, 10
-  br i1 %cmp.i, label %if.then.i, label %if.else.i
-
-Checkpoint_2_B: 
-if.else.i:                                        ; preds = %if.then
-  %call1.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([31 x i8], [31 x i8]* @.str.1, i64 0, i64 0))
-  br label %b1.exit
-LoA Details: 
-
-LOA_0: 
-if.then:                                          ; preds = %entry
-  %1 = bitcast i32* %x.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %1)
-  store i32 10, i32* %x.i, align 4
-  %2 = load i32, i32* %x.i, align 4
-  %cmp.i = icmp eq i32 %2, 10
-  br i1 %cmp.i, label %if.then.i, label %if.else.i
-
-LOA_1: 
-if.else.i:                                        ; preds = %if.then
-  %call1.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([31 x i8], [31 x i8]* @.str.1, i64 0, i64 0))
-  br label %b1.exit
-=============================================================
-=============================================================
-Measurement 3
-LoA Size: 2
-
-
-Checkpoint_3_A: 
-if.then:                                          ; preds = %entry
-  %1 = bitcast i32* %x.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %1)
-  store i32 10, i32* %x.i, align 4
-  %2 = load i32, i32* %x.i, align 4
-  %cmp.i = icmp eq i32 %2, 10
-  br i1 %cmp.i, label %if.then.i, label %if.else.i
-
-Checkpoint_3_B: 
-if.then.i:                                        ; preds = %if.then
-  %call.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str, i64 0, i64 0))
-  br label %b1.exit
-LoA Details: 
-
-LOA_0: 
-if.then:                                          ; preds = %entry
-  %1 = bitcast i32* %x.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %1)
-  store i32 10, i32* %x.i, align 4
-  %2 = load i32, i32* %x.i, align 4
-  %cmp.i = icmp eq i32 %2, 10
-  br i1 %cmp.i, label %if.then.i, label %if.else.i
-
-LOA_1: 
-if.then.i:                                        ; preds = %if.then
-  %call.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str, i64 0, i64 0))
-  br label %b1.exit
-=============================================================
-=============================================================
-Measurement 4
-LoA Size: 0
-
-
-Checkpoint_4_A: 
-if.else:                                          ; preds = %entry
-  %call.i1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.2, i64 0, i64 0))
-  br label %if.end
-
-Checkpoint_4_B: 
-if.end:                                           ; preds = %if.else, %b1.exit
-  %call.i2 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.3, i64 0, i64 0))
-  %call.i3 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.5, i64 0, i64 0))
-  %call.i.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.4, i64 0, i64 0))
-  store i32 10, i32* %z, align 4
-  br label %while.cond
-=============================================================
-=============================================================
-Measurement 5
-LoA Size: 0
-
-
-Checkpoint_5_A: 
-if.end:                                           ; preds = %if.else, %b1.exit
-  %call.i2 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.3, i64 0, i64 0))
-  %call.i3 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.5, i64 0, i64 0))
-  %call.i.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.4, i64 0, i64 0))
-  store i32 10, i32* %z, align 4
-  br label %while.cond
-
-Checkpoint_5_B: 
-while.cond:                                       ; preds = %while.body, %if.end
-  %4 = load i32, i32* %z, align 4
-  %cmp1 = icmp sgt i32 %4, 0
-  br i1 %cmp1, label %while.body, label %while.end
-=============================================================
-=============================================================
-Measurement 6
-LoA Size: 2
-
-
-Checkpoint_6_A: 
-while.cond:                                       ; preds = %while.body, %if.end
-  %4 = load i32, i32* %z, align 4
-  %cmp1 = icmp sgt i32 %4, 0
-  br i1 %cmp1, label %while.body, label %while.end
-
-Checkpoint_6_B: 
-while.body:                                       ; preds = %while.cond
-  %call.i4 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.6, i64 0, i64 0))
-  %5 = load i32, i32* %z, align 4
-  %dec = add nsw i32 %5, -1
-  store i32 %dec, i32* %z, align 4
-  br label %while.cond
-LoA Details: 
-
-LOA_0: 
-while.cond:                                       ; preds = %while.body, %if.end
-  %4 = load i32, i32* %z, align 4
-  %cmp1 = icmp sgt i32 %4, 0
-  br i1 %cmp1, label %while.body, label %while.end
-
-LOA_1: 
-while.body:                                       ; preds = %while.cond
-  %call.i4 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.6, i64 0, i64 0))
-  %5 = load i32, i32* %z, align 4
-  %dec = add nsw i32 %5, -1
-  store i32 %dec, i32* %z, align 4
-  br label %while.cond
-=============================================================
-=============================================================
-Measurement 7
-LoA Size: 2
-
-
-Checkpoint_7_A: 
-while.cond:                                       ; preds = %while.body, %if.end
-  %4 = load i32, i32* %z, align 4
-  %cmp1 = icmp sgt i32 %4, 0
-  br i1 %cmp1, label %while.body, label %while.end
-
-Checkpoint_7_B: 
-while.end:                                        ; preds = %while.cond
-  %6 = bitcast i32* %r.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %6)
-  store i32 4, i32* %r.i, align 4
-  %7 = load i32, i32* %r.i, align 4
-  switch i32 %7, label %sw.default.i [
-    i32 1, label %sw.bb.i
-    i32 2, label %sw.bb1.i
-    i32 3, label %sw.bb2.i
-    i32 4, label %sw.bb3.i
-  ]
-LoA Details: 
-
-LOA_0: 
-while.cond:                                       ; preds = %while.body, %if.end
-  %4 = load i32, i32* %z, align 4
-  %cmp1 = icmp sgt i32 %4, 0
-  br i1 %cmp1, label %while.body, label %while.end
-
-LOA_1: 
-while.end:                                        ; preds = %while.cond
-  %6 = bitcast i32* %r.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %6)
-  store i32 4, i32* %r.i, align 4
-  %7 = load i32, i32* %r.i, align 4
-  switch i32 %7, label %sw.default.i [
-    i32 1, label %sw.bb.i
-    i32 2, label %sw.bb1.i
-    i32 3, label %sw.bb2.i
-    i32 4, label %sw.bb3.i
-  ]
-=============================================================
-=============================================================
-Measurement 8
-LoA Size: 0
-
-
-Checkpoint_8_A: 
-while.body:                                       ; preds = %while.cond
-  %call.i4 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.6, i64 0, i64 0))
-  %5 = load i32, i32* %z, align 4
-  %dec = add nsw i32 %5, -1
-  store i32 %dec, i32* %z, align 4
-  br label %while.cond
-
-Checkpoint_8_B: 
-while.cond:                                       ; preds = %while.body, %if.end
-  %4 = load i32, i32* %z, align 4
-  %cmp1 = icmp sgt i32 %4, 0
-  br i1 %cmp1, label %while.body, label %while.end
-=============================================================
-=============================================================
-Measurement 9
-LoA Size: 2
-
-
-Checkpoint_9_A: 
-while.end:                                        ; preds = %while.cond
-  %6 = bitcast i32* %r.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %6)
-  store i32 4, i32* %r.i, align 4
-  %7 = load i32, i32* %r.i, align 4
-  switch i32 %7, label %sw.default.i [
-    i32 1, label %sw.bb.i
-    i32 2, label %sw.bb1.i
-    i32 3, label %sw.bb2.i
-    i32 4, label %sw.bb3.i
-  ]
-
-Checkpoint_9_B: 
-sw.bb3.i:                                         ; preds = %while.end
-  %call.i3.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.10, i64 0, i64 0))
-  br label %switchDeterministic.exit
-LoA Details: 
-
-LOA_0: 
-while.end:                                        ; preds = %while.cond
-  %6 = bitcast i32* %r.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %6)
-  store i32 4, i32* %r.i, align 4
-  %7 = load i32, i32* %r.i, align 4
-  switch i32 %7, label %sw.default.i [
-    i32 1, label %sw.bb.i
-    i32 2, label %sw.bb1.i
-    i32 3, label %sw.bb2.i
-    i32 4, label %sw.bb3.i
-  ]
-
-LOA_1: 
-sw.bb3.i:                                         ; preds = %while.end
-  %call.i3.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.10, i64 0, i64 0))
-  br label %switchDeterministic.exit
-=============================================================
-=============================================================
-Measurement 10
-LoA Size: 2
-
-
-Checkpoint_10_A: 
-while.end:                                        ; preds = %while.cond
-  %6 = bitcast i32* %r.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %6)
-  store i32 4, i32* %r.i, align 4
-  %7 = load i32, i32* %r.i, align 4
-  switch i32 %7, label %sw.default.i [
-    i32 1, label %sw.bb.i
-    i32 2, label %sw.bb1.i
-    i32 3, label %sw.bb2.i
-    i32 4, label %sw.bb3.i
-  ]
-
-Checkpoint_10_B: 
-sw.bb2.i:                                         ; preds = %while.end
-  %call.i2.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.9, i64 0, i64 0))
-  br label %switchDeterministic.exit
-LoA Details: 
-
-LOA_0: 
-while.end:                                        ; preds = %while.cond
-  %6 = bitcast i32* %r.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %6)
-  store i32 4, i32* %r.i, align 4
-  %7 = load i32, i32* %r.i, align 4
-  switch i32 %7, label %sw.default.i [
-    i32 1, label %sw.bb.i
-    i32 2, label %sw.bb1.i
-    i32 3, label %sw.bb2.i
-    i32 4, label %sw.bb3.i
-  ]
-
-LOA_1: 
-sw.bb2.i:                                         ; preds = %while.end
-  %call.i2.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.9, i64 0, i64 0))
-  br label %switchDeterministic.exit
-=============================================================
-=============================================================
-Measurement 11
-LoA Size: 2
-
-
-Checkpoint_11_A: 
-while.end:                                        ; preds = %while.cond
-  %6 = bitcast i32* %r.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %6)
-  store i32 4, i32* %r.i, align 4
-  %7 = load i32, i32* %r.i, align 4
-  switch i32 %7, label %sw.default.i [
-    i32 1, label %sw.bb.i
-    i32 2, label %sw.bb1.i
-    i32 3, label %sw.bb2.i
-    i32 4, label %sw.bb3.i
-  ]
-
-Checkpoint_11_B: 
-sw.bb1.i:                                         ; preds = %while.end
-  %call.i1.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.8, i64 0, i64 0))
-  br label %switchDeterministic.exit
-LoA Details: 
-
-LOA_0: 
-while.end:                                        ; preds = %while.cond
-  %6 = bitcast i32* %r.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %6)
-  store i32 4, i32* %r.i, align 4
-  %7 = load i32, i32* %r.i, align 4
-  switch i32 %7, label %sw.default.i [
-    i32 1, label %sw.bb.i
-    i32 2, label %sw.bb1.i
-    i32 3, label %sw.bb2.i
-    i32 4, label %sw.bb3.i
-  ]
-
-LOA_1: 
-sw.bb1.i:                                         ; preds = %while.end
-  %call.i1.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.8, i64 0, i64 0))
-  br label %switchDeterministic.exit
-=============================================================
-=============================================================
-Measurement 12
-LoA Size: 2
-
-
-Checkpoint_12_A: 
-while.end:                                        ; preds = %while.cond
-  %6 = bitcast i32* %r.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %6)
-  store i32 4, i32* %r.i, align 4
-  %7 = load i32, i32* %r.i, align 4
-  switch i32 %7, label %sw.default.i [
-    i32 1, label %sw.bb.i
-    i32 2, label %sw.bb1.i
-    i32 3, label %sw.bb2.i
-    i32 4, label %sw.bb3.i
-  ]
-
-Checkpoint_12_B: 
-sw.bb.i:                                          ; preds = %while.end
-  %call.i.i5 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.7, i64 0, i64 0))
-  br label %switchDeterministic.exit
-LoA Details: 
-
-LOA_0: 
-while.end:                                        ; preds = %while.cond
-  %6 = bitcast i32* %r.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %6)
-  store i32 4, i32* %r.i, align 4
-  %7 = load i32, i32* %r.i, align 4
-  switch i32 %7, label %sw.default.i [
-    i32 1, label %sw.bb.i
-    i32 2, label %sw.bb1.i
-    i32 3, label %sw.bb2.i
-    i32 4, label %sw.bb3.i
-  ]
-
-LOA_1: 
-sw.bb.i:                                          ; preds = %while.end
-  %call.i.i5 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.7, i64 0, i64 0))
-  br label %switchDeterministic.exit
-=============================================================
-=============================================================
-Measurement 13
-LoA Size: 2
-
-
-Checkpoint_13_A: 
-while.end:                                        ; preds = %while.cond
-  %6 = bitcast i32* %r.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %6)
-  store i32 4, i32* %r.i, align 4
-  %7 = load i32, i32* %r.i, align 4
-  switch i32 %7, label %sw.default.i [
-    i32 1, label %sw.bb.i
-    i32 2, label %sw.bb1.i
-    i32 3, label %sw.bb2.i
-    i32 4, label %sw.bb3.i
-  ]
-
-Checkpoint_13_B: 
-sw.default.i:                                     ; preds = %while.end
-  %call.i6 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.11, i64 0, i64 0))
-  br label %switchDeterministic.exit
-LoA Details: 
-
-LOA_0: 
-while.end:                                        ; preds = %while.cond
-  %6 = bitcast i32* %r.i to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %6)
-  store i32 4, i32* %r.i, align 4
-  %7 = load i32, i32* %r.i, align 4
-  switch i32 %7, label %sw.default.i [
-    i32 1, label %sw.bb.i
-    i32 2, label %sw.bb1.i
-    i32 3, label %sw.bb2.i
-    i32 4, label %sw.bb3.i
-  ]
-
-LOA_1: 
-sw.default.i:                                     ; preds = %while.end
-  %call.i6 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.11, i64 0, i64 0))
-  br label %switchDeterministic.exit
-=============================================================
-=============================================================
-Measurement 14
-LoA Size: 0
-
-
-Checkpoint_14_A: 
-b1.exit:                                          ; preds = %if.then.i, %if.else.i
-  %3 = bitcast i32* %x.i to i8*
-  call void @llvm.lifetime.end.p0i8(i64 4, i8* %3)
-  br label %if.end
-
-Checkpoint_14_B: 
-if.end:                                           ; preds = %if.else, %b1.exit
-  %call.i2 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.3, i64 0, i64 0))
-  %call.i3 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.5, i64 0, i64 0))
-  %call.i.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.4, i64 0, i64 0))
-  store i32 10, i32* %z, align 4
-  br label %while.cond
-=============================================================
-=============================================================
-Measurement 15
-LoA Size: 0
-
-
-Checkpoint_15_A: 
-if.else.i:                                        ; preds = %if.then
-  %call1.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([31 x i8], [31 x i8]* @.str.1, i64 0, i64 0))
-  br label %b1.exit
-
-Checkpoint_15_B: 
-b1.exit:                                          ; preds = %if.then.i, %if.else.i
-  %3 = bitcast i32* %x.i to i8*
-  call void @llvm.lifetime.end.p0i8(i64 4, i8* %3)
-  br label %if.end
-=============================================================
-=============================================================
-Measurement 16
-LoA Size: 0
-
-
-Checkpoint_16_A: 
-if.then.i:                                        ; preds = %if.then
-  %call.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str, i64 0, i64 0))
-  br label %b1.exit
-
-Checkpoint_16_B: 
-b1.exit:                                          ; preds = %if.then.i, %if.else.i
-  %3 = bitcast i32* %x.i to i8*
-  call void @llvm.lifetime.end.p0i8(i64 4, i8* %3)
-  br label %if.end
-=============================================================
-=============================================================
-Measurement 17
-LoA Size: 0
-
-
-Checkpoint_17_A: 
-sw.bb3.i:                                         ; preds = %while.end
-  %call.i3.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.10, i64 0, i64 0))
-  br label %switchDeterministic.exit
-
-Checkpoint_17_B: 
-switchDeterministic.exit:                         ; preds = %sw.bb.i, %sw.bb1.i, %sw.bb2.i, %sw.bb3.i, %sw.default.i
-  %8 = bitcast i32* %r.i to i8*
-  call void @llvm.lifetime.end.p0i8(i64 4, i8* %8)
-  call void @switchNonDeterministic()
-  %9 = load i32, i32* %retval, align 4
-  ret i32 %9
-=============================================================
-=============================================================
-Measurement 18
-LoA Size: 0
-
-
-Checkpoint_18_A: 
-sw.bb2.i:                                         ; preds = %while.end
-  %call.i2.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.9, i64 0, i64 0))
-  br label %switchDeterministic.exit
-
-Checkpoint_18_B: 
-switchDeterministic.exit:                         ; preds = %sw.bb.i, %sw.bb1.i, %sw.bb2.i, %sw.bb3.i, %sw.default.i
-  %8 = bitcast i32* %r.i to i8*
-  call void @llvm.lifetime.end.p0i8(i64 4, i8* %8)
-  call void @switchNonDeterministic()
-  %9 = load i32, i32* %retval, align 4
-  ret i32 %9
-=============================================================
-=============================================================
-Measurement 19
-LoA Size: 0
-
-
-Checkpoint_19_A: 
-sw.bb1.i:                                         ; preds = %while.end
-  %call.i1.i = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.8, i64 0, i64 0))
-  br label %switchDeterministic.exit
-
-Checkpoint_19_B: 
-switchDeterministic.exit:                         ; preds = %sw.bb.i, %sw.bb1.i, %sw.bb2.i, %sw.bb3.i, %sw.default.i
-  %8 = bitcast i32* %r.i to i8*
-  call void @llvm.lifetime.end.p0i8(i64 4, i8* %8)
-  call void @switchNonDeterministic()
-  %9 = load i32, i32* %retval, align 4
-  ret i32 %9
-=============================================================
-=============================================================
-Measurement 20
-LoA Size: 0
-
-
-Checkpoint_20_A: 
-sw.bb.i:                                          ; preds = %while.end
-  %call.i.i5 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.7, i64 0, i64 0))
-  br label %switchDeterministic.exit
-
-Checkpoint_20_B: 
-switchDeterministic.exit:                         ; preds = %sw.bb.i, %sw.bb1.i, %sw.bb2.i, %sw.bb3.i, %sw.default.i
-  %8 = bitcast i32* %r.i to i8*
-  call void @llvm.lifetime.end.p0i8(i64 4, i8* %8)
-  call void @switchNonDeterministic()
-  %9 = load i32, i32* %retval, align 4
-  ret i32 %9
-=============================================================
-=============================================================
-Measurement 21
-LoA Size: 0
-
-
-Checkpoint_21_A: 
-sw.default.i:                                     ; preds = %while.end
-  %call.i6 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.11, i64 0, i64 0))
-  br label %switchDeterministic.exit
-
-Checkpoint_21_B: 
-switchDeterministic.exit:                         ; preds = %sw.bb.i, %sw.bb1.i, %sw.bb2.i, %sw.bb3.i, %sw.default.i
-  %8 = bitcast i32* %r.i to i8*
-  call void @llvm.lifetime.end.p0i8(i64 4, i8* %8)
-  call void @switchNonDeterministic()
-  %9 = load i32, i32* %retval, align 4
-  ret i32 %9
-=============================================================
-
-BCÀŞ5     b0$MY¾f}û´OÈ$D2 !  W  !       #‘AÈI29’„%‹b€EB’B¤28K
-2RˆHpÄ!#D‡ŒA’dÈ± CFˆ É2R„*(*1|°\‘ ÅÈ   ‰      2"H	 bF !+$˜!%$˜'…¤`Rd\ $e‚À›#@ÔPĞ@C m tF LHÍ€+°FÎ‰œ# ’F“¨	Y3$Ù›#¦   Q     ˜àÿÿÿÿ  ? ş €>Ø@ÀˆA    I     †@    &|À;ø; ƒ6€‡qhvHw¨|hƒsp‡zØ`
-åĞí åĞğ w z0r s m rpq s z0rĞğ w z`t v@mv@z`tĞæ€p q xĞî€zv s z`tĞ³r€J’A†Œ	4BV	" Bò…@$    @@ ;$Â†0H    €€ vHŠQb     ì ãÆ 	     Ø!YÆ1A     °CâŒc(ƒ$      `‡$Æ1˜A     °CB£Î 	     Ø!¹Qh     ìèÀ(†4H    €€ vHzpƒ$    @@ ;¤P8a’  €     €!*
-           ©TÁp€           `H‚          @ C*Y           RÍB           @ ÀŠ          € †Tµ(           0¤²A         €  €!.
-           ©tAP            `HÅ‚          @ C*_˜           RÅƒ¥          @ Àê$
-         € †T,AP@          0¤‚	Â        €  €!M           ©pÃ€          `H@         @ 
-G  d  3   2˜LŒ	&GÆC
-Ú‰c ô4³Ùe2(í™Óò9$–‡İc´‚†zâ(=Ãlv™J»Aóòøí&ƒÄò°{ŒVPÑF,¥ç q˜Í.“t”ƒÒsĞ8Ìf—É
-eÊ ô4³Ùe²B2(=Ãlv™¬PÆJÏAã0›]&+¨hsÒsĞ8Ìf—É
-mÎ2Pz‡Ùì2Y¡ÍyJÏAã0›]&+´9Ó@é9hf³ËdeÜo::í>ƒĞey™X	  ±  —   3€Äáf=ˆC8„ÃŒB€yxs˜qæ íô€3BÂÁÎ¡f0=ˆC8„ƒÌ=ÈC=Œ=ÌxŒtp{yH‡ppzpvx‡p ‡Ììá0n0ãğğP3ÄŞ!Ø!Âaf0‰;¼ƒ;ĞC9´<¼ƒ<„;Ìğv`{h7h‡rh7€‡p‡p`v(vøvx‡w€‡_‡q‡r˜‡y˜,îğîàõÀì0bÈ¡ä¡Ì¡ä¡ÜaÊ!ÄÊaÖC9ÈC9˜C9ÈC9¸Ã8”C8ˆ;”Ã/¼ƒ<ü‚;Ô;°ÃÇi‡pX‡rpƒthx`‡t‡t ‡ÎSî òPäã@á ìP3 (ÜÁÂAÒ!ÜÜàäáêfQ8°C:œƒ;ÌP$v`{h7`‡wxx˜QLôğP3jÊaè!ŞÁ~ä¡Ì!ğaT…ƒ8ÌÃ;°C=ĞC9üÂ<äC;ˆÃ;°ÃŒÅ
-‡y˜‡w‡tz(r˜\ãìÀåPó0#ÁÒAäáØáŞfH;°ƒ=´ƒ„Ã8ŒC9ÌÃ<¸Á9ÈÃ;Ô<ÌH´qv`q‡qX‡ÛÆì`íàğ å0å öPnã0å0óàéàäPø0#âìaÂØáì!æ!Ä!Ø!è!f ;¼C=¸9”ƒ9ÌX¼ppwxzzH‡wp  y   "   rH Cˆ	r2H #Œ‘‘ÑD (d<12B!£(l Š  wchar_sizeclang version 10.0.0-4ubuntu1 #ÌŒ 0l0Ã0Ä #	ÊˆÍ®Í¥í¬­ÌÅŒ-ìln”€H…Í®Í%¬Ìn”   ©  !   
-r(‡w€zXp˜C=¸Ã8°C9ĞÃ‚æÆ¡èAÂÁæ!è!ŞÁ4ã`çPá ä@á çPô°€y(‡p`vx‡qz(rXpœÃ8´;¤ƒ=”ÃkØ!ÜáÜ äaÜ èÂaĞ¡ÈaÂØÑ     Ì<¤ƒ;œ;”= ƒ<”C8Ã   a   %   D,      ÄŠ‚ä µ¡@ $7Ü`¨c É$7    3³£0l@Å PÀÆpC`€Á,C # ‚`àœA1K0Œ ‚ƒÅ,Á á@    63Ìs ÑLvRøD3œÀ>±H„Å×HáOÑ! Ëb5… ,K     a      A,      $G ¨u† µÔ   # ‚`àˆA á@   PÍaöBÀ²     a      A,      $G ¨uÈ µÔ   # ‚`àˆA á@   PÍaöBÀ²     a      A,      $G ¨u!µÔ   # ‚`àˆA á@   PÍaöBÀ²     a      A,      $G ¨uH!µÔCBHm µ  # ‚`àŒ0bP       PÍacÀ²øˆÁ°,      a      A,      $G ¨uˆ!µÔ   # ‚`àˆA á@   PÍaöBÀ²     a      A,      $G ¨uÆ!µÔ   # ‚`àˆA á@   PÍaöBÀ²     a      A,      $G ¨u"µÔ   # ‚`àˆA á@   PÍaöBÀ²     a      A,      $G ¨uF"µÔ   # ‚`àˆA á@   PÍaöBÀ²     a      A,      $G ¨u†"µÔ   # ‚`àˆA á@   PÍaöBÀ²     a   A   G,      ÄŠ H Pê(ŒCzé†:
-‘Ş@zƒ¡ÂH¤7Ş`¨£0é¤7ê8Ezé    3³£0l@Ê PÀÆ0k´à# ‚`à¨Á1K`Œ ‚³Ç,1bP  ³ÆˆA€ 8mpÌ# ‚`à¸Á1K`h8   †sÀ²øHm9‡ ,‹Ø¦sÀ²øÈ}†dùAPß€!Y~ØG`H–÷D3E˜Õ‘İ°,>r‰dùÄƒ,a;„ ,Ë’åÁ(’åDPË       a   S   G,      ÄŠ H Pê(ŒCzé†:
-‘Ş@zƒ¡ÂH¤7Ş`¨£0é¤7ê8Ezé    3³¤0Á0k0
-# ‚`@uBF
- Á ƒ`Ä€ @,ïÇ
-@`Ø€0‚ ƒa&(Ö hÁ6 F
- ÁÀƒf–À1( 'šYcÄ  @9hf	Œƒ A0pæ ™%0F
- ÁÀ¡ƒf–ÀĞp       ¦3Dc>‡ ,‹ÔösÀ²øˆm@‡ ,‹Ü¶3 Ã`9… ,K}†dùA`ß€!Y~ÜG`H–¸°,ùD3E˜Ù‘Õ“á‚ÓTgH–O<ÈâÖcÀ²øˆİ°,W H–?@-Ó’å      a   Ö   P,       ÄF H±¢ 9@m¨# 	$8êˆ@‚	†:
-Cà@‚ƒ¡$8à`¨ã@
-	$8ê8B‚	†:Äà@‚b5Pe@m¨£0	$8ê(D‚	†:
-#‘à@‚ƒ¡ÂP$8à`¨ã@	$8    3³£0Á0k0
-3³£0Á0k0
-3³£0l@Ø ‚6 $°1Ül`0ËAmG Á [-6 l è`c¸!ĞÀ`–A‚ƒ A0pú ›% F
- ÁÀñƒl–€È¥íˆ€ `oğ³ÆˆA€ 8  Í# ‚`à„‚6bP  (h# ‚`àŒ‚6l@4b0 ³5l7e`³HŒ ‚c
-Al`ĞÀ°!0Kp¤ÕvÄÀ @0=Hƒ`Ø€¸Ö` èbc˜…	œ5Pò`Ñ†šƒ A0pV¡›%xF
- ÁÀa…n–à1( §ºY‚gÄ  @Wèf	ƒ A0p^¡›%x²k;b`  (ÀA0b@  Š)ÇÆá@   G   ¶•À²øÈí#¶tÀ²Ô>rˆdùAPûÈ1 ’åí#×€H–·ĞùÈHáOÑXÕ0Â=`’…LÂÑ1HƒH"øÄ…L4\>bR„À<µ)°,>rRøD3‚bÈBø3`§pH–>rGPûÄ…L†•À²øˆäf4ÌcCp	RøÓA4>bM‡ ,‹ÔætÀ²øˆ}RøÄ"ötÀ²øÈmS‡ ,‹àÆuÀ²øˆnPˆ ,‹øÈ(Ö,„/8Í`BFDL°@A4S„#Yş@ µL>bI…À<>bDAfY‰ ,‹Ô>bZ‰ ,‹Ø>r	RøÄ">r	‰u áÍ !1     
-@‚PXP Â€Â‚1 ˆA
-ã@’E©˜Æy,(’¦Ë´â:ïƒ0hÄ,€€(ŒCDY˜ÆYƒ	1ğL€     q      2"„šèL€Ò1N€ô(ÁX€HáZ€¿h]€áˆAj€ù      e  Ó   ”       Æ   2   L      X       X      @      ø        
-          @                 H      H      ÿÿÿÿ $  J      J      ÿÿÿÿ$  P      P      ÿÿÿÿ $  R      R      ÿÿÿÿ $  S      S      ÿÿÿÿ $  T      T      ÿÿÿÿ $  U      U      ÿÿÿÿ $  V      V      ÿÿÿÿ $  X      X      ÿÿÿÿ $  Z      Z      ÿÿÿÿ $  \      \      ÿÿÿÿ $  ^      ^      ÿÿÿÿ $  q      q      ÿÿÿÿ $  ‡      ‡      ÿÿÿÿ$  Œ      Œ      ÿÿÿÿ$              ÿÿÿÿ$  ”      ”      ÿÿÿÿ $  ˜      ˜      ÿÿÿÿ,  °      °      ÿÿÿÿ,              ÿÿÿÿ              ÿÿÿÿ   #     
-      ÿÿÿÿ   +           ÿÿÿÿ   3           ÿÿÿÿ   ;           ÿÿÿÿ   C     "      ÿÿÿÿ   K     (      ÿÿÿÿ   S     .      ÿÿÿÿ   [     4      ÿÿÿÿ   c  	   :      ÿÿÿÿ   l  	   A      ÿÿÿÿ       ]  a   ”õ   .str.str.1.str.2.str.3.str.4.str.5.str.6.str.7.str.8.str.9.str.10.str.11b1printfb2cedfg1g2g3g4switchDeterministicswitchNonDeterministicsrandtimerandmainllvm.lifetime.start.p0i8llvm.lifetime.end.p0i813.0.0git 8c7ae532e55c14b18428aff93fda31f1c48ea061x86_64-pc-linux-gnubranches.c.L.str.L.str.1.L.str.2.L.str.3.L.str.4.L.str.5.L.str.6.L.str.7.L.str.8.L.str.9.L.str.10.L.str.11       
