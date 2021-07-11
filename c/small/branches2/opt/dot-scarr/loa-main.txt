@@ -1,0 +1,333 @@
+=============================================================
+ScaRR Offline Measurement Statistics
+=============================================================
+Offline Measurement Size: 8
+Number of Checkpoints: 6
+Number of List of Actions: 12
+=============================================================
+Checkpoints and LoA Details: 
+=============================================================
+Measurement 0
+LoA Size: 2
+
+Checkpoint_0_A: 
+  %1 = alloca i32, align 4
+  %2 = alloca i32, align 4
+  %3 = alloca i32, align 4
+  %4 = alloca i32, align 4
+  %5 = alloca i32, align 4
+  %6 = alloca i64, align 8
+  %7 = alloca i32, align 4
+  store i32 0, i32* %1, align 4
+  store i32 1, i32* %2, align 4
+  store i32 2, i32* %3, align 4
+  %8 = load i32, i32* %2, align 4
+  %9 = icmp eq i32 %8, 1
+  br i1 %9, label %10, label %16
+
+Checkpoint_0_B: 
+18:                                               ; preds = %21, %17
+  %19 = load i32, i32* %4, align 4
+  %20 = icmp sgt i32 %19, 0
+  br i1 %20, label %21, label %24
+LoA Details: 
+
+LOA_0: 
+  %1 = alloca i32, align 4
+  %2 = alloca i32, align 4
+  %3 = alloca i32, align 4
+  %4 = alloca i32, align 4
+  %5 = alloca i32, align 4
+  %6 = alloca i64, align 8
+  %7 = alloca i32, align 4
+  store i32 0, i32* %1, align 4
+  store i32 1, i32* %2, align 4
+  store i32 2, i32* %3, align 4
+  %8 = load i32, i32* %2, align 4
+  %9 = icmp eq i32 %8, 1
+  br i1 %9, label %10, label %16
+
+LOA_1: 
+16:                                               ; preds = %0
+  call void @b2()
+  br label %17
+=============================================================
+=============================================================
+Measurement 1
+LoA Size: 2
+
+
+Checkpoint_1_A: 
+18:                                               ; preds = %21, %17
+  %19 = load i32, i32* %4, align 4
+  %20 = icmp sgt i32 %19, 0
+  br i1 %20, label %21, label %24
+
+Checkpoint_1_B: 
+18:                                               ; preds = %21, %17
+  %19 = load i32, i32* %4, align 4
+  %20 = icmp sgt i32 %19, 0
+  br i1 %20, label %21, label %24
+LoA Details: 
+
+LOA_0: 
+18:                                               ; preds = %21, %17
+  %19 = load i32, i32* %4, align 4
+  %20 = icmp sgt i32 %19, 0
+  br i1 %20, label %21, label %24
+
+LOA_1: 
+21:                                               ; preds = %18
+  call void @f()
+  %22 = load i32, i32* %4, align 4
+  %23 = add nsw i32 %22, -1
+  store i32 %23, i32* %4, align 4
+  br label %18
+=============================================================
+=============================================================
+Measurement 2
+LoA Size: 2
+
+
+Checkpoint_2_A: 
+18:                                               ; preds = %21, %17
+  %19 = load i32, i32* %4, align 4
+  %20 = icmp sgt i32 %19, 0
+  br i1 %20, label %21, label %24
+
+Checkpoint_2_B: 
+30:                                               ; preds = %24
+  %31 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.11, i64 0, i64 0))
+  br label %32
+LoA Details: 
+
+LOA_0: 
+18:                                               ; preds = %21, %17
+  %19 = load i32, i32* %4, align 4
+  %20 = icmp sgt i32 %19, 0
+  br i1 %20, label %21, label %24
+
+LOA_1: 
+24:                                               ; preds = %18
+  store i32 4, i32* %5, align 4
+  %25 = load i32, i32* %5, align 4
+  switch i32 %25, label %30 [
+    i32 1, label %26
+    i32 2, label %27
+    i32 3, label %28
+    i32 4, label %29
+  ]
+=============================================================
+=============================================================
+Measurement 3
+LoA Size: 2
+
+
+Checkpoint_3_A: 
+18:                                               ; preds = %21, %17
+  %19 = load i32, i32* %4, align 4
+  %20 = icmp sgt i32 %19, 0
+  br i1 %20, label %21, label %24
+
+Checkpoint_3_B: 
+32:                                               ; preds = %30, %29, %28, %27, %26
+  %33 = call i64 @time(i64* %6)
+  %34 = trunc i64 %33 to i32
+  call void @srand(i32 %34)
+  %35 = call i32 @rand()
+  %36 = srem i32 %35, 4
+  %37 = add nsw i32 1, %36
+  store i32 %37, i32* %7, align 4
+  %38 = load i32, i32* %7, align 4
+  switch i32 %38, label %43 [
+    i32 1, label %39
+    i32 2, label %40
+    i32 3, label %41
+    i32 4, label %42
+  ]
+LoA Details: 
+
+LOA_0: 
+18:                                               ; preds = %21, %17
+  %19 = load i32, i32* %4, align 4
+  %20 = icmp sgt i32 %19, 0
+  br i1 %20, label %21, label %24
+
+LOA_1: 
+24:                                               ; preds = %18
+  store i32 4, i32* %5, align 4
+  %25 = load i32, i32* %5, align 4
+  switch i32 %25, label %30 [
+    i32 1, label %26
+    i32 2, label %27
+    i32 3, label %28
+    i32 4, label %29
+  ]
+=============================================================
+=============================================================
+Measurement 4
+LoA Size: 0
+
+
+Checkpoint_4_A: 
+30:                                               ; preds = %24
+  %31 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.11, i64 0, i64 0))
+  br label %32
+
+Checkpoint_4_B: 
+32:                                               ; preds = %30, %29, %28, %27, %26
+  %33 = call i64 @time(i64* %6)
+  %34 = trunc i64 %33 to i32
+  call void @srand(i32 %34)
+  %35 = call i32 @rand()
+  %36 = srem i32 %35, 4
+  %37 = add nsw i32 1, %36
+  store i32 %37, i32* %7, align 4
+  %38 = load i32, i32* %7, align 4
+  switch i32 %38, label %43 [
+    i32 1, label %39
+    i32 2, label %40
+    i32 3, label %41
+    i32 4, label %42
+  ]
+=============================================================
+=============================================================
+Measurement 5
+LoA Size: 2
+
+
+Checkpoint_5_A: 
+32:                                               ; preds = %30, %29, %28, %27, %26
+  %33 = call i64 @time(i64* %6)
+  %34 = trunc i64 %33 to i32
+  call void @srand(i32 %34)
+  %35 = call i32 @rand()
+  %36 = srem i32 %35, 4
+  %37 = add nsw i32 1, %36
+  store i32 %37, i32* %7, align 4
+  %38 = load i32, i32* %7, align 4
+  switch i32 %38, label %43 [
+    i32 1, label %39
+    i32 2, label %40
+    i32 3, label %41
+    i32 4, label %42
+  ]
+
+Checkpoint_5_B: 
+43:                                               ; preds = %32
+  %44 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.11, i64 0, i64 0))
+  br label %45
+LoA Details: 
+
+LOA_0: 
+32:                                               ; preds = %30, %29, %28, %27, %26
+  %33 = call i64 @time(i64* %6)
+  %34 = trunc i64 %33 to i32
+  call void @srand(i32 %34)
+  %35 = call i32 @rand()
+  %36 = srem i32 %35, 4
+  %37 = add nsw i32 1, %36
+  store i32 %37, i32* %7, align 4
+  %38 = load i32, i32* %7, align 4
+  switch i32 %38, label %43 [
+    i32 1, label %39
+    i32 2, label %40
+    i32 3, label %41
+    i32 4, label %42
+  ]
+
+LOA_1: 
+43:                                               ; preds = %32
+  %44 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.11, i64 0, i64 0))
+  br label %45
+=============================================================
+=============================================================
+Measurement 6
+LoA Size: 2
+
+
+Checkpoint_6_A: 
+32:                                               ; preds = %30, %29, %28, %27, %26
+  %33 = call i64 @time(i64* %6)
+  %34 = trunc i64 %33 to i32
+  call void @srand(i32 %34)
+  %35 = call i32 @rand()
+  %36 = srem i32 %35, 4
+  %37 = add nsw i32 1, %36
+  store i32 %37, i32* %7, align 4
+  %38 = load i32, i32* %7, align 4
+  switch i32 %38, label %43 [
+    i32 1, label %39
+    i32 2, label %40
+    i32 3, label %41
+    i32 4, label %42
+  ]
+
+Checkpoint_6_B: 
+45:                                               ; preds = %43, %42, %41, %40, %39
+  %46 = load i32, i32* %1, align 4
+  ret i32 %46
+LoA Details: 
+
+LOA_0: 
+32:                                               ; preds = %30, %29, %28, %27, %26
+  %33 = call i64 @time(i64* %6)
+  %34 = trunc i64 %33 to i32
+  call void @srand(i32 %34)
+  %35 = call i32 @rand()
+  %36 = srem i32 %35, 4
+  %37 = add nsw i32 1, %36
+  store i32 %37, i32* %7, align 4
+  %38 = load i32, i32* %7, align 4
+  switch i32 %38, label %43 [
+    i32 1, label %39
+    i32 2, label %40
+    i32 3, label %41
+    i32 4, label %42
+  ]
+
+LOA_1: 
+42:                                               ; preds = %32
+  call void @g4()
+  br label %45
+=============================================================
+=============================================================
+Measurement 7
+LoA Size: 0
+
+
+Checkpoint_7_A: 
+43:                                               ; preds = %32
+  %44 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.11, i64 0, i64 0))
+  br label %45
+
+Checkpoint_7_B: 
+45:                                               ; preds = %43, %42, %41, %40, %39
+  %46 = load i32, i32* %1, align 4
+  ret i32 %46
+=============================================================
+
+BCÀÞ5     b0$MY¾f}û´OÈ$D2 !  ì  !       #‘AÈI29’„%‹b€EB’B¤28K
+2RˆHpÄ!#D‡ŒA’dÈ± CFˆ É2R„*(*1|°\‘ ÅÈ   ‰      2"H	 bF !+$˜!%$˜'…¤`Rd\ $e‚€›#@ÔPÐ@C m tF LHÍ€+°FÎŒ #9G 
+D@+Ù bsÁ   &|À;ø; ƒ6€‡qhvHw¨|hƒsp‡zØ`
+åÐí åÐð w z0r s m rpq s z0rÐð w z`t v@mv@z`tÐæ€p q xÐî€zv s z`tÐ³r€J’A†Œ	4Bv	" B²}a‡ÁÀ%    @@ ;$Â†.	     Ø!)F1xI  @   À	2ŽáK    €€ vH–q`     ì8ãÂ 	     Ø!‰qb     ìÐÀ(†1H    €€ vHn`$    @@ ;$:0Š¡’  €     €’Å`I  @   À)Žc8ƒ$      `H…
+‚          @ C*U0           RÁ‚           @ ÀJ          € †T³(           0¤¢…@         €  €!U-
+           ©lAP            `H…‚          @ C*]           Rñ‚           @ ÀÊ          € †TâPH@          0¤:Â        €  €!Õ:          Hl(Œ.   3   2˜LŒ	&GÆC
+Ú‰c ô4³Ùe2(í™Óò9$–‡Ýc´‚†zâ(=Ãlv™J»Aóòøí&ƒÄò°{ŒVPÑF,¥ç q˜Í.“t”ƒÒsÐ8Ìf—É
+eÊ ô4³Ùe²B2(=Ãlv™¬PÆJÏAã0›]&+¨hsŽÒsÐ8Ìf—É
+mÎ2Pz‡Ùì2Y¡ÍyJÏAã0›]&+´9Ó@é9hf³ËdeÜo::í>ƒÐey™X	  ±  —   3€Äáf=ˆC8„ÃŒB€yxs˜qæ íô€3BÂÁÎ¡f0=ˆC8„ƒÌ=ÈC=Œ=ÌxŒtp{yH‡ppzpvx‡p ‡Ììá0n0ãððP3ÄÞ!Ø!Âaf0‰;¼ƒ;ÐC9´<¼ƒ<„;Ìðv`{h7h‡rh7€‡p‡p`v(vøvx‡w€‡_‡q‡r˜‡y˜,îðîàõÀì0bÈ¡ä¡Ì¡ä¡ÜaÊ!ÄÊaÖC9ÈC9˜C9ÈC9¸Ã8”C8ˆ;”Ã/¼ƒ<ü‚;Ô;°ÃÇi‡pX‡rpƒthx`‡t‡t ‡ÎSî òPäã@á ìP3 (ÜÁÂAÒ!ÜÜàäáêfQ8°C:œƒ;ÌP$v`{h7`‡wxx˜QLôðP3jÊaè!ÞÁ~ä¡Ì!ðaT…ƒ8ÌÃ;°C=ÐC9üÂ<äC;ˆÃ;°ÃŒÅ
+‡y˜‡w‡tz(r˜\ãìÀåPó0#ÁÒAäáØáÞfH;°ƒ=´ƒ„Ã8ŒC9ÌÃ<¸Á9ÈÃ;Ô<ÌH´qv`q‡qX‡ÛÆì`íàð å0å öPnã0å0óàéàäPø0#âìaÂØáì!æ!Ä!Ø!è!f ;¼C=¸9”ƒ9ÌX¼ppwxzzH‡wp  y   "   rH Cˆ	r2H #Œ‘‘ÑD (d<12BŽ!£(l Š  wchar_sizeclang version 10.0.0-4ubuntu1 #ÌŒ 0h0Ã0Ä #	ÊˆÍ®Í¥í¬Ž­ÌÅŒ-ìln”€H…Í®Í%¬Ìn”   ©  !   
+r(‡w€zXp˜C=¸Ã8°C9ÐÃ‚æÆ¡èAÂÁæ!è!ÞÁ4ã`çPá ä@á çPô°€y(‡p`vx‡qz(rXpœÃ8´;¤ƒ=”ÃkØ!ÜáÜ äaÜ èÂaÐ¡ÈaÂØÑ     Ì<¤ƒ;œ;”= ƒ<”C8Ã   a      D,      ÄŠ‚è µ¡Ž@ (5 Ô`¨c J(5    3s£0l@Å PÀÆpC`€Á,C # ‚`àŒA1K0Œ ‚CÅ,Á    a   
+   A,      DG ¨u†@¥•   # ‚`àx  a   
+   A,      DG ¨uÈ@¥•   # ‚`àx  a   
+   A,      DG ¨uA¥•   # ‚`àx  a      A,      DG ¨uHA¥•   # ‚`àxÁˆ€ (œ  a   
+   A,      DG ¨uˆA¥•   # ‚`àx  a   
+   A,      DG ¨uÆA¥•   # ‚`àx  a   
+   A,      DG ¨uB¥•   # ‚`àx  a   
+   A,      DG ¨uFB¥•   # ‚`àx  a   
+   A,      DG ¨u†B¥•   # ‚`àx  a   g   V,      ÄF Š (j ˆŽ Pê8…rÊ  3s£0Á0g0
+3s£0Á0g0
+3s£0A1g@
+3s£0l@Î 4 ÃDÑ l7Ì2E0b@  JÐÁÆpC0Á,ƒ0# ‚` °Á,1b@  ŠÌ³Æˆ€ (m0K`4 ³!l7“Ì2 I0b@  ÊÂL0 ³Ç°±\@Ã,Làœ¢K0hÐŒ ‚Ò³Ïˆ€ (l0KðŒ ‚²³Ïˆ€ (j0KðŒ ‚3Ñ,Á3bP  001( i‚ A0€ÒàÎÐ@`Ø€€‚ ˆa& Î Rƒ¨$4˜F Á@¡ƒY‚jÄ€ @”9˜%¨F Á@‘ƒY‚jÄ€ @”8˜%¨F
+ ÁÀÑl– "Œ q      2"„øèI€‘J€µ(1L€ÏH±M€çh1O€ÿ     e  »   ”à      o   2   L      X       X      à      ¡      ´             à                 H      H      ÿÿÿÿ $  J      J      ÿÿÿÿ$  P      P      ÿÿÿÿ $  R      R      ÿÿÿÿ $  S      S      ÿÿÿÿ $  T      T      ÿÿÿÿ $  U      U      ÿÿÿÿ $  V      V      ÿÿÿÿ $  X      X      ÿÿÿÿ $  Z      Z      ÿÿÿÿ $  \      \      ÿÿÿÿ $  ^      ^      ÿÿÿÿ $  b      b      ÿÿÿÿ$  g      g      ÿÿÿÿ$  k      k      ÿÿÿÿ$  ¿             ÿÿÿÿ   Å            ÿÿÿÿ   Í      
+      ÿÿÿÿ   Õ            ÿÿÿÿ   Ý            ÿÿÿÿ   å            ÿÿÿÿ   í      "      ÿÿÿÿ   õ      (      ÿÿÿÿ   ý      .      ÿÿÿÿ        4      ÿÿÿÿ     	   :      ÿÿÿÿ     	   A      ÿÿÿÿ       ]  K   ”?   .str.str.1.str.2.str.3.str.4.str.5.str.6.str.7.str.8.str.9.str.10.str.11b1printfb2cedfg1g2g3g4mainsrandtimerand13.0.0git cf6213f6234c3026fc0bcca1e890251cc4c53b5cx86_64-pc-linux-gnubranches2.c.L.str.L.str.1.L.str.2.L.str.3.L.str.4.L.str.5.L.str.6.L.str.7.L.str.8.L.str.9.L.str.10.L.str.11     

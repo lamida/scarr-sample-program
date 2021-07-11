@@ -1,0 +1,12 @@
+digraph "CFG for 'main' function" {
+	label="CFG for 'main' function";
+
+	Node0x55a767ffcd00 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{%0 ThreadStart|{<s0>T|<s1>F}}"];
+	Node0x55a767ffcd00:s0 -> Node0x55a767ffd120;
+	Node0x55a767ffcd00:s1 -> Node0x55a767ffd170;
+	Node0x55a767ffd120 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f59c7d70",label="{%5 ExitPoint}"];
+	Node0x55a767ffd120 -> Node0x55a767ffd8f0;
+	Node0x55a767ffd170 [shape=record,color="#3d50c3ff", style=filled, fillcolor="#f59c7d70",label="{%8 ExitPoint}"];
+	Node0x55a767ffd170 -> Node0x55a767ffd8f0;
+	Node0x55a767ffd8f0 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{%11 ThreadEnd}"];
+}

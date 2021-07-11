@@ -1,216 +1,0 @@
-=============================================================
-ScaRR Offline Measurement Statistics
-=============================================================
-Offline Measurement Size: 4
-Number of Checkpoints: 4
-Number of List of Actions: 4
-=============================================================
-Checkpoints and LoA Details: 
-=============================================================
-Measurement 0
-LoA Size: 2
-
-Checkpoint_0_A: 
-  %1 = alloca i8*, align 8
-  %2 = alloca i32, align 4
-  %3 = alloca i32, align 4
-  %4 = alloca i8*, align 8
-  %5 = alloca i8*, align 8
-  store i32 0, i32* %3, align 4
-  %6 = bitcast i32* %2 to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %6)
-  %7 = call i32 (...) @rand()
-  %8 = srem i32 %7, 2
-  store i32 %8, i32* %2, align 4
-  %9 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str, i64 0, i64 0))
-  %10 = load i32, i32* %2, align 4
-  %11 = icmp eq i32 %10, 1
-  %12 = zext i1 %11 to i64
-  %13 = select i1 %11, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.2, i64 0, i64 0)
-  %14 = bitcast i32* %2 to i8*
-  call void @llvm.lifetime.end.p0i8(i64 4, i8* %14)
-  store i8* %13, i8** %4, align 8
-  store i8* getelementptr inbounds ([1 x i8], [1 x i8]* @.str.9, i64 0, i64 0), i8** %5, align 8
-  %15 = load i8*, i8** %4, align 8
-  %16 = call i32 @strcmp(i8* %15, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0))
-  %17 = icmp eq i32 %16, 0
-  br i1 %17, label %18, label %20
-
-Checkpoint_0_B: 
-18:                                               ; preds = %0
-  %19 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.3, i64 0, i64 0))
-  store i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.4, i64 0, i64 0), i8** %5, align 8
-  br label %22
-LoA Details: 
-
-LOA_0: 
-  %1 = alloca i8*, align 8
-  %2 = alloca i32, align 4
-  %3 = alloca i32, align 4
-  %4 = alloca i8*, align 8
-  %5 = alloca i8*, align 8
-  store i32 0, i32* %3, align 4
-  %6 = bitcast i32* %2 to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %6)
-  %7 = call i32 (...) @rand()
-  %8 = srem i32 %7, 2
-  store i32 %8, i32* %2, align 4
-  %9 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str, i64 0, i64 0))
-  %10 = load i32, i32* %2, align 4
-  %11 = icmp eq i32 %10, 1
-  %12 = zext i1 %11 to i64
-  %13 = select i1 %11, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.2, i64 0, i64 0)
-  %14 = bitcast i32* %2 to i8*
-  call void @llvm.lifetime.end.p0i8(i64 4, i8* %14)
-  store i8* %13, i8** %4, align 8
-  store i8* getelementptr inbounds ([1 x i8], [1 x i8]* @.str.9, i64 0, i64 0), i8** %5, align 8
-  %15 = load i8*, i8** %4, align 8
-  %16 = call i32 @strcmp(i8* %15, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0))
-  %17 = icmp eq i32 %16, 0
-  br i1 %17, label %18, label %20
-
-LOA_1: 
-18:                                               ; preds = %0
-  %19 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.3, i64 0, i64 0))
-  store i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.4, i64 0, i64 0), i8** %5, align 8
-  br label %22
-=============================================================
-=============================================================
-Measurement 1
-LoA Size: 2
-
-
-Checkpoint_1_A: 
-  %1 = alloca i8*, align 8
-  %2 = alloca i32, align 4
-  %3 = alloca i32, align 4
-  %4 = alloca i8*, align 8
-  %5 = alloca i8*, align 8
-  store i32 0, i32* %3, align 4
-  %6 = bitcast i32* %2 to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %6)
-  %7 = call i32 (...) @rand()
-  %8 = srem i32 %7, 2
-  store i32 %8, i32* %2, align 4
-  %9 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str, i64 0, i64 0))
-  %10 = load i32, i32* %2, align 4
-  %11 = icmp eq i32 %10, 1
-  %12 = zext i1 %11 to i64
-  %13 = select i1 %11, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.2, i64 0, i64 0)
-  %14 = bitcast i32* %2 to i8*
-  call void @llvm.lifetime.end.p0i8(i64 4, i8* %14)
-  store i8* %13, i8** %4, align 8
-  store i8* getelementptr inbounds ([1 x i8], [1 x i8]* @.str.9, i64 0, i64 0), i8** %5, align 8
-  %15 = load i8*, i8** %4, align 8
-  %16 = call i32 @strcmp(i8* %15, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0))
-  %17 = icmp eq i32 %16, 0
-  br i1 %17, label %18, label %20
-
-Checkpoint_1_B: 
-20:                                               ; preds = %0
-  %21 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.5, i64 0, i64 0))
-  store i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.6, i64 0, i64 0), i8** %5, align 8
-  br label %22
-LoA Details: 
-
-LOA_0: 
-  %1 = alloca i8*, align 8
-  %2 = alloca i32, align 4
-  %3 = alloca i32, align 4
-  %4 = alloca i8*, align 8
-  %5 = alloca i8*, align 8
-  store i32 0, i32* %3, align 4
-  %6 = bitcast i32* %2 to i8*
-  call void @llvm.lifetime.start.p0i8(i64 4, i8* %6)
-  %7 = call i32 (...) @rand()
-  %8 = srem i32 %7, 2
-  store i32 %8, i32* %2, align 4
-  %9 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str, i64 0, i64 0))
-  %10 = load i32, i32* %2, align 4
-  %11 = icmp eq i32 %10, 1
-  %12 = zext i1 %11 to i64
-  %13 = select i1 %11, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0), i8* getelementptr inbounds ([6 x i8], [6 x i8]* @.str.2, i64 0, i64 0)
-  %14 = bitcast i32* %2 to i8*
-  call void @llvm.lifetime.end.p0i8(i64 4, i8* %14)
-  store i8* %13, i8** %4, align 8
-  store i8* getelementptr inbounds ([1 x i8], [1 x i8]* @.str.9, i64 0, i64 0), i8** %5, align 8
-  %15 = load i8*, i8** %4, align 8
-  %16 = call i32 @strcmp(i8* %15, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.1, i64 0, i64 0))
-  %17 = icmp eq i32 %16, 0
-  br i1 %17, label %18, label %20
-
-LOA_1: 
-20:                                               ; preds = %0
-  %21 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.5, i64 0, i64 0))
-  store i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.6, i64 0, i64 0), i8** %5, align 8
-  br label %22
-=============================================================
-=============================================================
-Measurement 2
-LoA Size: 0
-
-
-Checkpoint_2_A: 
-18:                                               ; preds = %0
-  %19 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.3, i64 0, i64 0))
-  store i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.4, i64 0, i64 0), i8** %5, align 8
-  br label %22
-
-Checkpoint_2_B: 
-22:                                               ; preds = %20, %18
-  %23 = load i8*, i8** %5, align 8
-  %24 = bitcast i8** %1 to i8*
-  call void @llvm.lifetime.start.p0i8(i64 8, i8* %24)
-  store i8* %23, i8** %1, align 8
-  %25 = load i8*, i8** %1, align 8
-  %26 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.7, i64 0, i64 0), i8* %25)
-  %27 = bitcast i8** %1 to i8*
-  call void @llvm.lifetime.end.p0i8(i64 8, i8* %27)
-  %28 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.8, i64 0, i64 0))
-  %29 = load i32, i32* %3, align 4
-  ret i32 %29
-=============================================================
-=============================================================
-Measurement 3
-LoA Size: 0
-
-
-Checkpoint_3_A: 
-20:                                               ; preds = %0
-  %21 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.5, i64 0, i64 0))
-  store i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.6, i64 0, i64 0), i8** %5, align 8
-  br label %22
-
-Checkpoint_3_B: 
-22:                                               ; preds = %20, %18
-  %23 = load i8*, i8** %5, align 8
-  %24 = bitcast i8** %1 to i8*
-  call void @llvm.lifetime.start.p0i8(i64 8, i8* %24)
-  store i8* %23, i8** %1, align 8
-  %25 = load i8*, i8** %1, align 8
-  %26 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.7, i64 0, i64 0), i8* %25)
-  %27 = bitcast i8** %1 to i8*
-  call void @llvm.lifetime.end.p0i8(i64 8, i8* %27)
-  %28 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.8, i64 0, i64 0))
-  %29 = load i32, i32* %3, align 4
-  ret i32 %29
-=============================================================
-
-BCÀÞ5     b0$MY¾f}û´OÈ$D2 !    !       #‘AÈI29’„%‹b€EB’BÄ28K
-2bˆHpÄ!#D‡ŒA’dÈ± CFˆ É2b„*(*1|°\‘ ÆÈ   ‰      2"ˆ	 bF !+$˜!%$˜'…¤`bd\ $f‚€æU (Ð€5 ¨P
-€µ (Ñ€ ¨Ñ€ ("ÀQs``‹.+Xe# FØ&âL°‘g‹@3XÓDâ(˜a#'*Èš#hš Q     ˜àÿÿÿÿ  ? þ €>Ø@ÀˆA    I     †@    &|À;ø; ƒ6€‡qhvHw¨|hƒsp‡zØ`
-åÐí åÐð w z0r s m rpq s z0rÐð w z`t v@mv@z`tÐæ€p q xÐî€zv s z`tÐ³r€J’B†Œ	4Bö Š|a‡Á`%    @@ ;$Â†+	     Ø!)F1`I  @   À	2Ž!K    €€ vH–qZ     °CâŒdØ’  €     €’ËÀ%    @@ ;$40š¡K    €€ vHn`<ƒ—     ìèÀˆ†/	     RéAB         @ Àjˆ         € †T§`d@          0¤j…‰         €  €!8T           ©êá            `HŒ          @ Cª– À           € †T1aˆ          ©n+           R½…U@           ±A p§  @    2˜LŒ	&GÆC
-61ˆéGš‡šhX ¦ƒŠ-ˆ(r":v2ˆé"¤BÂ †i
-G§ü»
-ËË ¸<mO³Ëç29DÉV1ýTóDH…,„A?Ò-Š$Ýö0;MQ£BiNÏ*Þ…LHcø¾OÑ Y%P    ±  —   3€Äáf=ˆC8„ÃŒB€yxs˜qæ íô€3BÂÁÎ¡f0=ˆC8„ƒÌ=ÈC=Œ=ÌxŒtp{yH‡ppzpvx‡p ‡Ììá0n0ãððP3ÄÞ!Ø!Âaf0‰;¼ƒ;ÐC9´<¼ƒ<„;Ìðv`{h7h‡rh7€‡p‡p`v(vøvx‡w€‡_‡q‡r˜‡y˜,îðîàõÀì0bÈ¡ä¡Ì¡ä¡ÜaÊ!ÄÊaÖC9ÈC9˜C9ÈC9¸Ã8”C8ˆ;”Ã/¼ƒ<ü‚;Ô;°ÃÇi‡pX‡rpƒthx`‡t‡t ‡ÎSî òPäã@á ìP3 (ÜÁÂAÒ!ÜÜàäáêfQ8°C:œƒ;ÌP$v`{h7`‡wxx˜QLôðP3jÊaè!ÞÁ~ä¡Ì!ðaT…ƒ8ÌÃ;°C=ÐC9üÂ<äC;ˆÃ;°ÃŒÅ
-‡y˜‡w‡tz(r˜\ãìÀåPó0#ÁÒAäáØáÞfH;°ƒ=´ƒ„Ã8ŒC9ÌÃ<¸Á9ÈÃ;Ô<ÌH´qv`q‡qX‡ÛÆì`íàð å0å öPnã0å0óàéàäPø0#âìaÂØáì!æ!Ä!Ø!è!f ;¼C=¸9”ƒ9ÌX¼ppwxzzH‡wp  y   "   rH Cˆ	r2H #Œ‘‘ÑD (d<12BŽ!£(l Š  wchar_sizeclang version 10.0.0-4ubuntu1 #Ö7‚`ÁÃ3‚Œ&(#66»6—¶7²:¶23¶°³¹Q"66»6—4²27ºQ‚  ©  !   
-r(‡w€zXp˜C=¸Ã8°C9ÐÃ‚æÆ¡èAÂÁæ!è!ÞÁ4ã`çPá ä@á çPô°€y(‡p`vx‡qz(rXpœÃ8´;¤ƒ=”ÃkØ!ÜáÜ äaÜ èÂaÐ¡ÈaÂØÑ     Ì<¤ƒ;œ;”= ƒ<”C8Ã   a      A,   
-   d‘# 4u@b@b0Ô1ˆˆÁPGad d   3–õÂˆ€ \Ü‡C0 # ‚`uÖn0È€Œé†6  a      A,      DŽ Ð4Ôq „„ÁPÇdd   # ‚`aÂ
-  a      A,      DŽ Ð4Ô‘(„„ÁPÇÂdd   # ‚`aÂ
-  a      A,      DŽ Ð4ÔÑ8ˆˆ 3“õ‘Â°@ÁDF Á Ó†@   a   
-   A,      DŽ Ð4Ôñ@„„ # ‚`]  a   h   D,      d Yd‘# 4u@d@d0Ô1ÁPGad@d@C‘”uÈ@d@d0Ôq ÁPG¢d@d@CcY4u4ÎAd@d0Ôñ@    3“õ‘ÂL„e}£0aYß(ÌDLÖG
-3“õ‘Â°1PÄ´# ‚`Pc@# ‚`p­Á”G0 # ‚`±ÁDˆ5†‚2 cºÁª„d¦10 ƒ2P.6  †Å" Z&2b`  bÐA6Ü|`0ËÁˆA€ du€F ³ÃˆA€ dvpÏE ³=IjÚ A0(9À‚a¢€ª‰Œ ‚A¦X×´# ‚`Pt°# ‚`ñAF—56‰      
-@‚8XP ÂÀÁ" 3X Q€q         q      2"„
-ÞØ?€ˆøpI€§1K       e  —   ”°      Å   2   L      X       X      P      ÷      
-            P                 :   	   :   	   ÿÿÿÿ $  C      C      ÿÿÿÿ$  G      G      ÿÿÿÿ$  M      M      ÿÿÿÿ $  `      `      ÿÿÿÿ $  u      u      ÿÿÿÿ $              ÿÿÿÿ $              ÿÿÿÿ $  ‘      ‘      ÿÿÿÿ$  —      —      ÿÿÿÿ,  ¯      ¯      ÿÿÿÿ,              ÿÿÿÿ              ÿÿÿÿ        
-      ÿÿÿÿ   '           ÿÿÿÿ   /           ÿÿÿÿ   7           ÿÿÿÿ   ?     "      ÿÿÿÿ   G     (      ÿÿÿÿ   O     .      ÿÿÿÿ   W     4      ÿÿÿÿ       ]  [   ”¿   .str.str.1.str.2.str.3.str.4.str.5.str.6.str.7.str.8.str.9get_inputrandprintfget_privileged_infoget_unprivileged_infoprint_outputmy_terminatemainstrcmpllvm.lifetime.start.p0i8llvm.lifetime.end.p0i813.0.0git 8c7ae532e55c14b18428aff93fda31f1c48ea061x86_64-pc-linux-gnuscarr.c.L.str.L.str.1.L.str.2.L.str.3.L.str.4.L.str.5.L.str.6.L.str.7.L.str.8.L.str.9     
